@@ -23,13 +23,14 @@ class WebtoonDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath)
-        var content = UIListContentConfiguration.subtitleCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath) as! WebtoonCell
 
-        content.text = list[indexPath.row]["title"]
-        content.secondaryText = list[indexPath.row]["author"]
-        cell.contentConfiguration = content
+        cell.titleLabel.text = list[indexPath.row]["title"]
+        cell.authorLabel.text = list[indexPath.row]["author"]
+        if let imagePath = list[indexPath.row]["image"] {
+            cell.picture.image = UIImage.init(named: imagePath, in: nil, compatibleWith: nil)
         
+        }
         return cell
     }
 }
@@ -48,5 +49,7 @@ private let list = [
 [ "title" : "원수는 사장실에서", "author" : "레이먼", "image" : "novel1.png" ],
 [ "title" : "세계 멸망을 굳이 막아야 하나요", "author" : "셀타", "image" : "novel2.png" ],
 [ "title" : "진심으로 정략결혼", "author" : "박죠죠", "image" : "novel3.png" ],
-[ "title" : "여주 죽고 미친 남주의 친구입니다", "author" : "메미칼린", "image" : "novel4.png" ]
+[ "title" : "여주 죽고 미친 남주의 친구입니다", "author" : "메미칼린", "image" : "novel4.png" ],
+[ "title" : "모시던 아가씨가 도련님이 되어버렸다 되어버렸다", "author" : "시그마,태비의별", "image" : "wait1.png" ]
+
 ]
