@@ -17,7 +17,10 @@ import Foundation
 //}
 
 class PurchaseListViewModel {
-    var purchases = [Purchase]()
+    private var purchases = [Purchase]()
+    var purchaseCount: Int {
+        return purchases.count
+    }
     
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(receivePurchase(_:)), name: .didWebtoonPurchase, object: nil)
@@ -27,6 +30,23 @@ class PurchaseListViewModel {
         let purchase = webtoon.purchased()
         purchases.append(purchase)
     }
+    
+    func purchase(at index: Int) -> Purchase? {
+        return index <= purchaseCount ? purchases[index] : nil
+    }
+    
+    func remove(at index: Int) {
+        if purchaseCount != 0 && index <= purchaseCount {
+            purchases.remove(at: index)
+        }
+    }
+    
+    func removeAll() {
+        purchases.removeAll()
+    }
+    
+    
+    
     
     func printAllPurchases() {
         print("------전체구매기록-------")

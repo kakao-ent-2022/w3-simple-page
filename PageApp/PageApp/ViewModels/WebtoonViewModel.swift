@@ -48,7 +48,7 @@ struct WebtoonListViewModel {
         [ "title" : "여주 죽고 미친 남주의 친구입니다", "author" : "메미칼린", "image" : "novel4.png" ]
     ]
     
-    var webtoons: [Webtoon] {
+    private var webtoons: [Webtoon] {
         return list.map {
         //작품의 정보가 없을 때 빈문자열이 맞을까?
             Webtoon(

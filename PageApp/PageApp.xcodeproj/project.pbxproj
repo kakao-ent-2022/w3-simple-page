@@ -10,6 +10,7 @@
 		D4030BA8279E6ABB00252AB2 /* WebtoonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4030BA7279E6ABB00252AB2 /* WebtoonTableViewCell.swift */; };
 		D4030BAA279E81AC00252AB2 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4030BA9279E81AC00252AB2 /* Purchase.swift */; };
 		D4030BAC279E829B00252AB2 /* PurchaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4030BAB279E829B00252AB2 /* PurchaseViewModel.swift */; };
+		D4030BB4279E914600252AB2 /* PageAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4030BB3279E914600252AB2 /* PageAppTests.swift */; };
 		D41FFAD2279E3A8D00E4601C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FFAD1279E3A8D00E4601C /* AppDelegate.swift */; };
 		D41FFAD4279E3A8D00E4601C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FFAD3279E3A8D00E4601C /* SceneDelegate.swift */; };
 		D41FFAD6279E3A8D00E4601C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FFAD5279E3A8D00E4601C /* ViewController.swift */; };
@@ -20,10 +21,22 @@
 		D41FFAEB279E400500E4601C /* WebtoonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FFAEA279E400500E4601C /* WebtoonViewModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D4030BB5279E914600252AB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41FFAC6279E3A8D00E4601C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D41FFACD279E3A8D00E4601C;
+			remoteInfo = PageApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		D4030BA7279E6ABB00252AB2 /* WebtoonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonTableViewCell.swift; sourceTree = "<group>"; };
 		D4030BA9279E81AC00252AB2 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		D4030BAB279E829B00252AB2 /* PurchaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewModel.swift; sourceTree = "<group>"; };
+		D4030BB1279E914600252AB2 /* PageAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PageAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4030BB3279E914600252AB2 /* PageAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageAppTests.swift; sourceTree = "<group>"; };
 		D41FFACE279E3A8D00E4601C /* PageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41FFAD1279E3A8D00E4601C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D41FFAD3279E3A8D00E4601C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +50,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D4030BAE279E914600252AB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D41FFACB279E3A8D00E4601C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -47,10 +67,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4030BB2279E914600252AB2 /* PageAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4030BB3279E914600252AB2 /* PageAppTests.swift */,
+			);
+			path = PageAppTests;
+			sourceTree = "<group>";
+		};
 		D41FFAC5279E3A8D00E4601C = {
 			isa = PBXGroup;
 			children = (
 				D41FFAD0279E3A8D00E4601C /* PageApp */,
+				D4030BB2279E914600252AB2 /* PageAppTests */,
 				D41FFACF279E3A8D00E4601C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				D41FFACE279E3A8D00E4601C /* PageApp.app */,
+				D4030BB1279E914600252AB2 /* PageAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +139,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D4030BB0279E914600252AB2 /* PageAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4030BB9279E914600252AB2 /* Build configuration list for PBXNativeTarget "PageAppTests" */;
+			buildPhases = (
+				D4030BAD279E914600252AB2 /* Sources */,
+				D4030BAE279E914600252AB2 /* Frameworks */,
+				D4030BAF279E914600252AB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4030BB6279E914600252AB2 /* PBXTargetDependency */,
+			);
+			name = PageAppTests;
+			productName = PageAppTests;
+			productReference = D4030BB1279E914600252AB2 /* PageAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D41FFACD279E3A8D00E4601C /* PageApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D41FFAE2279E3A8E00E4601C /* Build configuration list for PBXNativeTarget "PageApp" */;
@@ -136,6 +184,10 @@
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					D4030BB0279E914600252AB2 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = D41FFACD279E3A8D00E4601C;
+					};
 					D41FFACD279E3A8D00E4601C = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -155,11 +207,19 @@
 			projectRoot = "";
 			targets = (
 				D41FFACD279E3A8D00E4601C /* PageApp */,
+				D4030BB0279E914600252AB2 /* PageAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D4030BAF279E914600252AB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D41FFACC279E3A8D00E4601C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -173,6 +233,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D4030BAD279E914600252AB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4030BB4279E914600252AB2 /* PageAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D41FFACA279E3A8D00E4601C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -189,6 +257,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4030BB6279E914600252AB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D41FFACD279E3A8D00E4601C /* PageApp */;
+			targetProxy = D4030BB5279E914600252AB2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D41FFAD7279E3A8D00E4601C /* Main.storyboard */ = {
@@ -210,6 +286,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D4030BB7279E914600252AB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kakaoent.PageAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PageApp.app/PageApp";
+			};
+			name = Debug;
+		};
+		D4030BB8279E914600252AB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kakaoent.PageAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PageApp.app/PageApp";
+			};
+			name = Release;
+		};
 		D41FFAE0279E3A8E00E4601C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -383,6 +503,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D4030BB9279E914600252AB2 /* Build configuration list for PBXNativeTarget "PageAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4030BB7279E914600252AB2 /* Debug */,
+				D4030BB8279E914600252AB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D41FFAC9279E3A8D00E4601C /* Build configuration list for PBXProject "PageApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
