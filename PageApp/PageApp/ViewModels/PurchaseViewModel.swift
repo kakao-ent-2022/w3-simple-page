@@ -7,15 +7,6 @@
 
 import Foundation
 
-//struct PurchaseViewModel {
-//    let purchase: Purchase
-//
-//    init(_ webtoon: Webtoon) {
-//        let currentTime = Date.now
-//        self.purchase = Purchase(webtoon: webtoon, purchaseTime: currentTime)
-//    }
-//}
-
 class PurchaseListViewModel {
     private var purchases = [Purchase]()
     var purchaseCount: Int {
@@ -45,9 +36,6 @@ class PurchaseListViewModel {
         purchases.removeAll()
     }
     
-    
-    
-    
     func printAllPurchases() {
         print("------전체구매기록-------")
         for purchase in purchases {
@@ -55,7 +43,6 @@ class PurchaseListViewModel {
             print(purchase.purchaseTime)
         }
         print("-------------------")
-        
     }
     
     @objc func receivePurchase(_ notification: Notification) {

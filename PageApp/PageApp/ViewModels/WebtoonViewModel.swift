@@ -71,5 +71,4 @@ struct WebtoonListViewModel {
         let webtoon = self.webtoons[index]
         return WebtoonViewModel(webtoon)
     }
-    
 }
