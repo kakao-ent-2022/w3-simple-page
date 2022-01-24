@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4030BA8279E6ABB00252AB2 /* WebtoonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4030BA7279E6ABB00252AB2 /* WebtoonTableViewCell.swift */; };
 		D41FFAD2279E3A8D00E4601C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FFAD1279E3A8D00E4601C /* AppDelegate.swift */; };
 		D41FFAD4279E3A8D00E4601C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FFAD3279E3A8D00E4601C /* SceneDelegate.swift */; };
 		D41FFAD6279E3A8D00E4601C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FFAD5279E3A8D00E4601C /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4030BA7279E6ABB00252AB2 /* WebtoonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonTableViewCell.swift; sourceTree = "<group>"; };
 		D41FFACE279E3A8D00E4601C /* PageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41FFAD1279E3A8D00E4601C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D41FFAD3279E3A8D00E4601C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				D41FFAEC279E400A00E4601C /* ViewModels */,
 				D41FFAED279E401200E4601C /* Controllers */,
 				D41FFAD7279E3A8D00E4601C /* Main.storyboard */,
+				D4030BA7279E6ABB00252AB2 /* WebtoonTableViewCell.swift */,
 				D41FFADA279E3A8E00E4601C /* Assets.xcassets */,
 				D41FFADC279E3A8E00E4601C /* LaunchScreen.storyboard */,
 				D41FFADF279E3A8E00E4601C /* Info.plist */,
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4030BA8279E6ABB00252AB2 /* WebtoonTableViewCell.swift in Sources */,
 				D41FFAEB279E400500E4601C /* WebtoonViewModel.swift in Sources */,
 				D41FFAD6279E3A8D00E4601C /* ViewController.swift in Sources */,
 				D41FFAD2279E3A8D00E4601C /* AppDelegate.swift in Sources */,

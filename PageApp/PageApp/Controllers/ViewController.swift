@@ -22,13 +22,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WebtoonListCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "WebtoonListCell", for: indexPath) as? WebtoonTableViewCell else {
+            return UITableViewCell()
+        }
         let webtoonViewModel = self.webtoonListViewModel.webtoonAtIndex(indexPath.row)
-        
-        cell.textLabel?.text = webtoonViewModel.title
-        cell.detailTextLabel?.text = webtoonViewModel.author
+        cell.titleLabel.text = webtoonViewModel.title
+        cell.authorLabel.text = webtoonViewModel.author
         return cell
     }
-    
-    
 }
