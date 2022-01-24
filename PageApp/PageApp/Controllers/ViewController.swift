@@ -18,7 +18,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        webtoonListViewModel.numberOfRowsInSection(section)
+        return webtoonListViewModel.numberOfRowsInSection(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -26,8 +26,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         let webtoonViewModel = self.webtoonListViewModel.webtoonAtIndex(indexPath.row)
-        cell.titleLabel.text = webtoonViewModel.title
-        cell.authorLabel.text = webtoonViewModel.author
+        cell.configure(webtoonViewModel: webtoonViewModel)
         return cell
     }
 }

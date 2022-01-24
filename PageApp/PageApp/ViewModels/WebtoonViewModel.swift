@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct WebtoonViewModel {
     private let webtoon: Webtoon
@@ -22,8 +23,9 @@ struct WebtoonViewModel {
         return self.webtoon.author
     }
     
-    //이미지는 어떻게 리턴할지 고민중
-    //주소나, 이미지 자체로 변환해서 리턴?
+    var image: UIImage? {
+        return UIImage(named: self.webtoon.imageFileName)
+    }
 }
 
 struct WebtoonListViewModel {
@@ -48,7 +50,7 @@ struct WebtoonListViewModel {
             Webtoon(
                 title: $0["title"] ?? "",
                 author: $0["author"] ?? "",
-                image: $0["image"] ?? ""
+                imageFileName: $0["image"] ?? ""
             )
         }
     }
@@ -65,8 +67,4 @@ struct WebtoonListViewModel {
         let webtoon = self.webtoons[index]
         return WebtoonViewModel(webtoon)
     }
-}
-
-extension WebtoonListViewModel {
-    
 }

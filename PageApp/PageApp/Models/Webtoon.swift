@@ -10,5 +10,5 @@ import Foundation
 struct Webtoon {
     let title: String
     let author: String
-    let image: String
+    let imageFileName: String
 }
