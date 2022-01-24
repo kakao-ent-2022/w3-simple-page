@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  SimplePage
+//  PageApp
 //
 //  Created by lauren.c on 2022/01/24.
 //

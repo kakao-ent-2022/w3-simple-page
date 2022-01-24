@@ -1,13 +1,13 @@
 //
-//  SimplePageUITestsLaunchTests.swift
-//  SimplePageUITests
+//  PageAppUITestsLaunchTests.swift
+//  PageAppUITests
 //
 //  Created by lauren.c on 2022/01/24.
 //
 
 import XCTest
 
-class SimplePageUITestsLaunchTests: XCTestCase {
+class PageAppUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
