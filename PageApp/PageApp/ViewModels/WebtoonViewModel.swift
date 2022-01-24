@@ -26,6 +26,10 @@ struct WebtoonViewModel {
     var image: UIImage? {
         return UIImage(named: self.webtoon.imageFileName)
     }
+    
+    func purchased() -> Purchase {
+        return Purchase(webtoon)
+    }
 }
 
 struct WebtoonListViewModel {
@@ -67,4 +71,5 @@ struct WebtoonListViewModel {
         let webtoon = self.webtoons[index]
         return WebtoonViewModel(webtoon)
     }
+    
 }

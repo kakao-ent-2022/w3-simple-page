@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     let webtoonListViewModel = WebtoonListViewModel()
+    let purchaseViewModel = PurchaseListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()

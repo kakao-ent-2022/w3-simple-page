@@ -89,6 +89,9 @@
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="구매"/>
+                                                    <connections>
+                                                        <action selector="purchaseButtonTouched:" destination="XCT-o2-UBg" eventType="touchUpInside" id="fb6-Le-kth"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시그마, 태비의별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geG-HO-eWC">
                                                     <rect key="frame" x="131" y="70.5" width="87" height="16"/>
@@ -136,12 +139,47 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Simple Page" id="EsA-BC-RxS">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart.fill" catalog="system" id="fDB-dA-3Zw"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart.fill" catalog="system" id="fDB-dA-3Zw">
+                            <connections>
+                                <segue destination="SiT-P2-yPR" kind="show" id="ZHx-5M-NFD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="81.696428571428569"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="YvV-V0-uXl">
+            <objects>
+                <tableViewController id="SiT-P2-yPR" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1hb-CB-ZeA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="flm-PH-9W7">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="flm-PH-9W7" id="JDW-Qk-ppO">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SiT-P2-yPR" id="o3s-5J-aDh"/>
+                            <outlet property="delegate" destination="SiT-P2-yPR" id="tjf-I0-1t9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="History" id="RAi-35-PFr">
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="taC-z6-SsP"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YQY-L8-Vhe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1970" y="82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Jh-lM-tvH">
