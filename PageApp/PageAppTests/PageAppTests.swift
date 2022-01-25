@@ -19,17 +19,17 @@ class PageAppTests: XCTestCase {
     }
     
     func test_구매기록이_잘_추가되는지() throws {
-        sut.create(webtoon: webtoonListVM.webtoonAtIndex(0))
-        sut.create(webtoon: webtoonListVM.webtoonAtIndex(1))
-        sut.create(webtoon: webtoonListVM.webtoonAtIndex(2))
+        sut.makePurchase(webtoon: webtoonListVM.webtoonAtIndex(0))
+        sut.makePurchase(webtoon: webtoonListVM.webtoonAtIndex(1))
+        sut.makePurchase(webtoon: webtoonListVM.webtoonAtIndex(2))
         
         XCTAssertEqual(sut.purchaseCount, 3)
     }
     
     func test_구매기록이_잘_삭제되는지() throws {
-        sut.create(webtoon: webtoonListVM.webtoonAtIndex(0))
-        sut.create(webtoon: webtoonListVM.webtoonAtIndex(1))
-        sut.create(webtoon: webtoonListVM.webtoonAtIndex(2))
+        sut.makePurchase(webtoon: webtoonListVM.webtoonAtIndex(0))
+        sut.makePurchase(webtoon: webtoonListVM.webtoonAtIndex(1))
+        sut.makePurchase(webtoon: webtoonListVM.webtoonAtIndex(2))
         sut.remove(at: 0)
         
         XCTAssertEqual(sut.purchaseCount, 2)
@@ -37,9 +37,9 @@ class PageAppTests: XCTestCase {
     }
     
     func test_모든_구매기록이_한번에_삭제되는지() throws {
-        sut.create(webtoon: webtoonListVM.webtoonAtIndex(0))
-        sut.create(webtoon: webtoonListVM.webtoonAtIndex(1))
-        sut.create(webtoon: webtoonListVM.webtoonAtIndex(2))
+        sut.makePurchase(webtoon: webtoonListVM.webtoonAtIndex(0))
+        sut.makePurchase(webtoon: webtoonListVM.webtoonAtIndex(1))
+        sut.makePurchase(webtoon: webtoonListVM.webtoonAtIndex(2))
         sut.removeAll()
         
         XCTAssertEqual(sut.purchaseCount, 0)

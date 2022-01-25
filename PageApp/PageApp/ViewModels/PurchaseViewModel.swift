@@ -7,7 +7,35 @@
 
 import Foundation
 
-class PurchaseListViewModel {
+protocol PurchaseManageable {
+    var purchaseCount: Int { get }
+    func makePurchase(webtoon: WebtoonViewModel)
+    func retrievePurchase(at index: Int) -> PurchaseViewModel?
+    func remove(at Index: Int)
+    func removeAll()
+}
+
+struct PurchaseViewModel {
+    private let purchase: Purchase
+    
+    init(_ purchase: Purchase) {
+        self.purchase = purchase
+    }
+    
+    var purchaseWebtoonTitle: String {
+        return self.purchase.webtoon.title
+    }
+    
+    var purchaseTimeString: String {
+        let date = self.purchase.purchaseTime
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "YYYY-MM-dd hh:mm:ss"
+        return dateFormatter.string(from: date)
+    }
+}
+
+class PurchaseListViewModel: PurchaseManageable {
     private var purchases = [Purchase]()
     var purchaseCount: Int {
         return purchases.count
@@ -17,13 +45,13 @@ class PurchaseListViewModel {
         NotificationCenter.default.addObserver(self, selector: #selector(receivePurchase(_:)), name: .didWebtoonPurchase, object: nil)
     }
     
-    func create(webtoon: WebtoonViewModel) {
-        let purchase = webtoon.purchased()
+    func makePurchase(webtoon: WebtoonViewModel) {
+        let purchase = webtoon.convertToPuchase()
         purchases.append(purchase)
     }
     
-    func purchase(at index: Int) -> Purchase? {
-        return index <= purchaseCount ? purchases[index] : nil
+    func retrievePurchase(at index: Int) -> PurchaseViewModel? {
+        return index <= purchaseCount ? PurchaseViewModel(purchases[index]) : nil
     }
     
     func remove(at index: Int) {
@@ -36,13 +64,13 @@ class PurchaseListViewModel {
         purchases.removeAll()
     }
     
-    func printAllPurchases() {
-        print("------전체구매기록-------")
+    func isPurchased(webtoon: WebtoonViewModel) -> Bool {
         for purchase in purchases {
-            print(purchase.webtoon.title)
-            print(purchase.purchaseTime)
+            if purchase.webtoon.title == webtoon.title {
+                return true
+            }
         }
-        print("-------------------")
+        return false
     }
     
     @objc func receivePurchase(_ notification: Notification) {
@@ -52,8 +80,6 @@ class PurchaseListViewModel {
         else {
             return
         }
-        create(webtoon: webtoonViewModel)
-        //아직 구매기록을 테이블뷰와 연결하기 전이라 디버깅용 코드를 아래 넣었습니다.
-        printAllPurchases()
+        makePurchase(webtoon: webtoonViewModel)
     }
 }

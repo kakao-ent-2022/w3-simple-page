@@ -13,12 +13,13 @@
 		D4030BB4279E914600252AB2 /* PageAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4030BB3279E914600252AB2 /* PageAppTests.swift */; };
 		D41FFAD2279E3A8D00E4601C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FFAD1279E3A8D00E4601C /* AppDelegate.swift */; };
 		D41FFAD4279E3A8D00E4601C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FFAD3279E3A8D00E4601C /* SceneDelegate.swift */; };
-		D41FFAD6279E3A8D00E4601C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FFAD5279E3A8D00E4601C /* ViewController.swift */; };
+		D41FFAD6279E3A8D00E4601C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FFAD5279E3A8D00E4601C /* MainViewController.swift */; };
 		D41FFAD9279E3A8D00E4601C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D41FFAD7279E3A8D00E4601C /* Main.storyboard */; };
 		D41FFADB279E3A8E00E4601C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D41FFADA279E3A8E00E4601C /* Assets.xcassets */; };
 		D41FFADE279E3A8E00E4601C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D41FFADC279E3A8E00E4601C /* LaunchScreen.storyboard */; };
 		D41FFAE6279E3DD500E4601C /* Webtoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FFAE5279E3DD500E4601C /* Webtoon.swift */; };
 		D41FFAEB279E400500E4601C /* WebtoonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FFAEA279E400500E4601C /* WebtoonViewModel.swift */; };
+		D4215411279F7CA300820622 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4215410279F7CA300820622 /* CartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,13 +41,14 @@
 		D41FFACE279E3A8D00E4601C /* PageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41FFAD1279E3A8D00E4601C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D41FFAD3279E3A8D00E4601C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D41FFAD5279E3A8D00E4601C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D41FFAD5279E3A8D00E4601C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D41FFAD8279E3A8D00E4601C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D41FFADA279E3A8E00E4601C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D41FFADD279E3A8E00E4601C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D41FFADF279E3A8E00E4601C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D41FFAE5279E3DD500E4601C /* Webtoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webtoon.swift; sourceTree = "<group>"; };
 		D41FFAEA279E400500E4601C /* WebtoonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonViewModel.swift; sourceTree = "<group>"; };
+		D4215410279F7CA300820622 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				D41FFAD3279E3A8D00E4601C /* SceneDelegate.swift */,
 				D41FFAE7279E3FCA00E4601C /* Models */,
 				D41FFAEC279E400A00E4601C /* ViewModels */,
+				D421540F279F773600820622 /* CustomCells */,
 				D41FFAED279E401200E4601C /* Controllers */,
 				D41FFAD7279E3A8D00E4601C /* Main.storyboard */,
 				D41FFADA279E3A8E00E4601C /* Assets.xcassets */,
@@ -130,10 +133,18 @@
 		D41FFAED279E401200E4601C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D41FFAD5279E3A8D00E4601C /* ViewController.swift */,
-				D4030BA7279E6ABB00252AB2 /* WebtoonTableViewCell.swift */,
+				D41FFAD5279E3A8D00E4601C /* MainViewController.swift */,
+				D4215410279F7CA300820622 /* CartViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D421540F279F773600820622 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				D4030BA7279E6ABB00252AB2 /* WebtoonTableViewCell.swift */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,10 +259,11 @@
 				D4030BA8279E6ABB00252AB2 /* WebtoonTableViewCell.swift in Sources */,
 				D4030BAC279E829B00252AB2 /* PurchaseViewModel.swift in Sources */,
 				D41FFAEB279E400500E4601C /* WebtoonViewModel.swift in Sources */,
-				D41FFAD6279E3A8D00E4601C /* ViewController.swift in Sources */,
+				D41FFAD6279E3A8D00E4601C /* MainViewController.swift in Sources */,
 				D41FFAD2279E3A8D00E4601C /* AppDelegate.swift in Sources */,
 				D41FFAE6279E3DD500E4601C /* Webtoon.swift in Sources */,
 				D41FFAD4279E3A8D00E4601C /* SceneDelegate.swift in Sources */,
+				D4215411279F7CA300820622 /* CartViewController.swift in Sources */,
 				D4030BAA279E81AC00252AB2 /* Purchase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
