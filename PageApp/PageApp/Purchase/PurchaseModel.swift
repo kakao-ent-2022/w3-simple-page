@@ -7,14 +7,14 @@
 
 import Foundation
 
-class PurchaseModel {
+struct PurchaseModel {
     var name: String
     var _createdAt: Date
     var createdAt: String {
         get {
             let formatter = DateFormatter()
             formatter.locale = Locale(identifier: "ko_KR")
-            formatter.dateFormat = "yyyy-MM-dd HH:mm"
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             return formatter.string(from: _createdAt)
         }
     }

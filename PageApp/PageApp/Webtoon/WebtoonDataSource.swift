@@ -30,6 +30,7 @@ class WebtoonDataSource: NSObject, UITableViewDataSource {
         cell.titleLabel.text = item.title
         cell.authorLabel.text = item.author
         cell.picture.image = item.image
+        cell.webtoonModel = item
         return cell
     }
 }

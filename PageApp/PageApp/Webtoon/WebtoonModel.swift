@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WebtoonModel {
+struct WebtoonModel {
     var title: String!
     var author: String!
     var image: UIImage!

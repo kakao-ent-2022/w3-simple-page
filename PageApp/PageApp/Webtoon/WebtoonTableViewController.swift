@@ -27,8 +27,8 @@ class WebtoonTableViewController: UIViewController {
         self.dataSource = dataSource
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name("purchase"), object: nil, queue: nil) {(notification) in
-            if let purchasedItem = notification.object as? WebtoonCell, let name = purchasedItem.titleLabel.text {
-                self.purchaseDataSource.data.append(PurchaseModel(name: name))
+            if let purchasedItem = notification.object as? WebtoonModel {
+                self.purchaseDataSource.data.append(PurchaseModel(name: purchasedItem.title))
             }
         }
     }
