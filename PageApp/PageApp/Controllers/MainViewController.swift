@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     let webtoonListViewModel = WebtoonListViewModel()
     let purchaseViewModel = PurchaseListViewModel()
 
@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return webtoonListViewModel.numberOfRowsInSection(section)
     }
