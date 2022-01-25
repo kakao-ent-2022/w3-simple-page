@@ -15,13 +15,32 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        initCartButton()
+        
         initNovelTableView()
+    }
+    
+    func initCartButton() {
+        let barbuttonImage = UIImage(named: "cart")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: barbuttonImage,
+            style: .plain,
+            target: self,
+            action: #selector(onCartButtonTouched)
+        )
+    }
+    
+    @objc func onCartButtonTouched() {
+        guard let cartViewController = storyboard?.instantiateViewController(withIdentifier: "CartViewController")
+        else {
+            return
+        }
+        navigationController?.pushViewController(cartViewController, animated: true)
     }
     
     func initNovelTableView() {
         novelTableView.dataSource = novelDataSource
-        novelTableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
+        novelTableView.register(NovelTableViewCell.self, forCellReuseIdentifier: "cell")
         
         view.addSubview(novelTableView)
         

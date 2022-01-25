@@ -23,7 +23,7 @@ class NovelDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        as! TableViewCell
+        as! NovelTableViewCell
         
         let row = indexPath.row
         let thumbnail = novels[row].image

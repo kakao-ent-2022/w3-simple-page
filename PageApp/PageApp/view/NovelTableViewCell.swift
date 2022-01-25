@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class NovelTableViewCell: UITableViewCell {
     let titleLabel = UILabel()
     let authorLabel = UILabel()
     let thumbnailImageView = UIImageView()

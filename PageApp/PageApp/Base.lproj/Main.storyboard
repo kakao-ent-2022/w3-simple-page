@@ -25,9 +25,7 @@
                         <viewLayoutGuide key="safeArea" id="T4e-pC-JHp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Sigmple Page" id="c4e-CL-wH7">
-                        <barButtonItem key="rightBarButtonItem" image="outline_shopping_cart_black_32pt" id="sOR-Q8-BNE"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Sigmple Page" id="c4e-CL-wH7"/>
                     <connections>
                         <outlet property="bannerImageView" destination="aYN-Xx-ChA" id="DSF-fL-cRP"/>
                     </connections>
@@ -52,10 +50,37 @@
             </objects>
             <point key="canvasLocation" x="-1148" y="-177"/>
         </scene>
+        <!--Cart View Controller-->
+        <scene sceneID="iqh-nz-v8G">
+            <objects>
+                <tableViewController id="VCz-1W-qHv" customClass="CartViewController" customModule="PageApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="GUd-3s-1eD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="y4N-PO-U0V">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y4N-PO-U0V" id="nFj-vS-0hz">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VCz-1W-qHv" id="HAS-S5-Vkg"/>
+                            <outlet property="delegate" destination="VCz-1W-qHv" id="Zhd-bY-1Tk"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lKl-06-7UQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1523" y="-177"/>
+        </scene>
     </scenes>
     <resources>
         <image name="novel_banner" width="1200" height="630"/>
-        <image name="outline_shopping_cart_black_32pt" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
