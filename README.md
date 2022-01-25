@@ -23,4 +23,4 @@
 - 구매한 웹툰은 더 이상 구매하지 못하도록 구현하였습니다.
 - 구매기록화면에서 삭제하면 다시 구매버튼이 활성화됩니다.
 
-<img src="https://images.velog.io/images/taelee/post/d1e71bd2-9718-434b-b7d8-9b9afdceaa00/Jan-25-2022%2012-33-30.gif" width=320>
+![](https://images.velog.io/images/taelee/post/224aa9a7-17f8-41aa-9f81-3dc34126ab3a/Jan-25-2022%2012-33-30.gif)
