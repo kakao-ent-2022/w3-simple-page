@@ -190,7 +190,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="History" id="RAi-35-PFr">
-                        <barButtonItem key="rightBarButtonItem" title="Clear" id="taC-z6-SsP"/>
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="taC-z6-SsP">
+                            <connections>
+                                <action selector="clearButtonTouched:" destination="SiT-P2-yPR" id="OfN-LM-99R"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQY-L8-Vhe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

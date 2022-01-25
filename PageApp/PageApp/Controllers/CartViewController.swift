@@ -28,6 +28,11 @@ class CartViewController: UITableViewController {
         return cell
     }
 
+    @IBAction func clearButtonTouched(_ sender: Any) {
+        purchaseListViewModel?.removeAll()
+        self.tableView.reloadData()
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
