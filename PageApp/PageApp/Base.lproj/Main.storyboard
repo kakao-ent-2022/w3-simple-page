@@ -103,7 +103,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="p5v-OQ-nwR" secondAttribute="trailing" constant="15" id="Czt-mE-BEA"/>
                                                 <constraint firstItem="geG-HO-eWC" firstAttribute="bottom" secondItem="iqe-As-iwv" secondAttribute="bottom" id="HTa-cz-ibs"/>
-                                                <constraint firstItem="p5v-OQ-nwR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HsU-MS-lxz" secondAttribute="trailing" constant="3" id="N64-g2-fwr"/>
+                                                <constraint firstItem="p5v-OQ-nwR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HsU-MS-lxz" secondAttribute="trailing" id="N64-g2-fwr"/>
                                                 <constraint firstItem="iqe-As-iwv" firstAttribute="centerY" secondItem="GAd-80-epy" secondAttribute="centerY" id="PhV-MA-uLT"/>
                                                 <constraint firstItem="iqe-As-iwv" firstAttribute="width" secondItem="GAd-80-epy" secondAttribute="width" multiplier="0.25" id="Uh2-wU-yAd"/>
                                                 <constraint firstItem="iqe-As-iwv" firstAttribute="leading" secondItem="GAd-80-epy" secondAttribute="leading" constant="23" id="eST-jz-sXb"/>
