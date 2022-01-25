@@ -19,6 +19,7 @@
 		D41FFADE279E3A8E00E4601C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D41FFADC279E3A8E00E4601C /* LaunchScreen.storyboard */; };
 		D41FFAE6279E3DD500E4601C /* Webtoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FFAE5279E3DD500E4601C /* Webtoon.swift */; };
 		D41FFAEB279E400500E4601C /* WebtoonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FFAEA279E400500E4601C /* WebtoonViewModel.swift */; };
+		D4215411279F7CA300820622 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4215410279F7CA300820622 /* CartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D41FFADF279E3A8E00E4601C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D41FFAE5279E3DD500E4601C /* Webtoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webtoon.swift; sourceTree = "<group>"; };
 		D41FFAEA279E400500E4601C /* WebtoonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonViewModel.swift; sourceTree = "<group>"; };
+		D4215410279F7CA300820622 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				D41FFAD5279E3A8D00E4601C /* MainViewController.swift */,
+				D4215410279F7CA300820622 /* CartViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				D41FFAD2279E3A8D00E4601C /* AppDelegate.swift in Sources */,
 				D41FFAE6279E3DD500E4601C /* Webtoon.swift in Sources */,
 				D41FFAD4279E3A8D00E4601C /* SceneDelegate.swift in Sources */,
+				D4215411279F7CA300820622 /* CartViewController.swift in Sources */,
 				D4030BAA279E81AC00252AB2 /* Purchase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

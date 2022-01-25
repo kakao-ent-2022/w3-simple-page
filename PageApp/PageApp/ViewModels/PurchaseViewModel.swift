@@ -7,7 +7,14 @@
 
 import Foundation
 
-class PurchaseListViewModel {
+protocol Purchasable {
+    func makePurchase(webtoon: WebtoonViewModel)
+    func retrievePurchase(at index: Int) -> Purchase?
+    func remove(at Index: Int)
+    func removeAll()
+}
+
+class PurchaseListViewModel: Purchasable {
     private var purchases = [Purchase]()
     var purchaseCount: Int {
         return purchases.count
@@ -17,12 +24,12 @@ class PurchaseListViewModel {
         NotificationCenter.default.addObserver(self, selector: #selector(receivePurchase(_:)), name: .didWebtoonPurchase, object: nil)
     }
     
-    func create(webtoon: WebtoonViewModel) {
+    func makePurchase(webtoon: WebtoonViewModel) {
         let purchase = webtoon.purchased()
         purchases.append(purchase)
     }
     
-    func purchase(at index: Int) -> Purchase? {
+    func retrievePurchase(at index: Int) -> Purchase? {
         return index <= purchaseCount ? purchases[index] : nil
     }
     
@@ -52,7 +59,7 @@ class PurchaseListViewModel {
         else {
             return
         }
-        create(webtoon: webtoonViewModel)
+        makePurchase(webtoon: webtoonViewModel)
         //아직 구매기록을 테이블뷰와 연결하기 전이라 디버깅용 코드를 아래 넣었습니다.
         printAllPurchases()
     }
