@@ -9,14 +9,22 @@ import UIKit
 
 class MainViewController: UIViewController {
     let webtoonListViewModel = WebtoonListViewModel()
-    let purchaseViewModel = PurchaseListViewModel()
-
+    let purchaseListViewModel = PurchaseListViewModel()
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
 }
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return webtoonListViewModel.numberOfRowsInSection(section)
     }
@@ -26,7 +34,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         let webtoonViewModel = self.webtoonListViewModel.webtoonAtIndex(indexPath.row)
-        cell.configure(webtoonViewModel: webtoonViewModel)
+        cell.configure(webtoonViewModel: webtoonViewModel, purchaseListViewModel: purchaseListViewModel)
         return cell
     }
     
@@ -36,6 +44,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let cartVC = segue.destination as? CartViewController else { return }
-        cartVC.purchaseListViewModel = self.purchaseViewModel
+        cartVC.purchaseListViewModel = self.purchaseListViewModel
     }
 }

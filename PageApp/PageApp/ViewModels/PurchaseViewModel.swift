@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Purchasable {
+protocol PurchaseManageable {
     var purchaseCount: Int { get }
     func makePurchase(webtoon: WebtoonViewModel)
     func retrievePurchase(at index: Int) -> PurchaseViewModel?
@@ -35,7 +35,7 @@ struct PurchaseViewModel {
     }
 }
 
-class PurchaseListViewModel: Purchasable {
+class PurchaseListViewModel: PurchaseManageable {
     private var purchases = [Purchase]()
     var purchaseCount: Int {
         return purchases.count
@@ -46,7 +46,7 @@ class PurchaseListViewModel: Purchasable {
     }
     
     func makePurchase(webtoon: WebtoonViewModel) {
-        let purchase = webtoon.purchased()
+        let purchase = webtoon.convertToPuchase()
         purchases.append(purchase)
     }
     
@@ -64,13 +64,13 @@ class PurchaseListViewModel: Purchasable {
         purchases.removeAll()
     }
     
-    func printAllPurchases() {
-        print("------전체구매기록-------")
+    func isPurchased(webtoon: WebtoonViewModel) -> Bool {
         for purchase in purchases {
-            print(purchase.webtoon.title)
-            print(purchase.purchaseTime)
+            if purchase.webtoon.title == webtoon.title {
+                return true
+            }
         }
-        print("-------------------")
+        return false
     }
     
     @objc func receivePurchase(_ notification: Notification) {
@@ -81,7 +81,5 @@ class PurchaseListViewModel: Purchasable {
             return
         }
         makePurchase(webtoon: webtoonViewModel)
-        //아직 구매기록을 테이블뷰와 연결하기 전이라 디버깅용 코드를 아래 넣었습니다.
-        printAllPurchases()
     }
 }

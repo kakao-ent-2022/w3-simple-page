@@ -27,7 +27,7 @@ struct WebtoonViewModel {
         return UIImage(named: self.webtoon.imageFileName)
     }
     
-    func purchased() -> Purchase {
+    func convertToPuchase() -> Purchase {
         return Purchase(webtoon)
     }
 }

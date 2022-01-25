@@ -115,6 +115,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="authorLabel" destination="geG-HO-eWC" id="3RF-NR-AtL"/>
+                                            <outlet property="purchaseButton" destination="p5v-OQ-nwR" id="0Id-RW-CzZ"/>
                                             <outlet property="thumbnail" destination="iqe-As-iwv" id="c18-OZ-n5E"/>
                                             <outlet property="titleLabel" destination="HsU-MS-lxz" id="uPX-Fp-UyN"/>
                                         </connections>
@@ -145,6 +146,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="qth-aP-HsY" id="c8l-un-7GK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

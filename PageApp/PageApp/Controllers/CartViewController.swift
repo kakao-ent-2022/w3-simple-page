@@ -8,7 +8,7 @@
 import UIKit
 
 class CartViewController: UITableViewController {
-    var purchaseListViewModel: Purchasable?
+    var purchaseListViewModel: PurchaseManageable?
 
     override func viewDidLoad() {
         super.viewDidLoad()
