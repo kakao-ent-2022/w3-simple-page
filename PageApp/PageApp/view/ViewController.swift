@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     
     func initNovelTableView() {
         novelTableView.dataSource = novelDataSource
-        novelTableView.register(NovelTableViewCell.self, forCellReuseIdentifier: "cell")
+        novelTableView.register(WebtoonTableViewCell.self, forCellReuseIdentifier: "cell")
         
         view.addSubview(novelTableView)
         

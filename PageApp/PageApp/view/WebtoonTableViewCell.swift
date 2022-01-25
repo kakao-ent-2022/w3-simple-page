@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NovelTableViewCell: UITableViewCell {
+class WebtoonTableViewCell: UITableViewCell {
     let titleLabel = UILabel()
     let authorLabel = UILabel()
     let thumbnailImageView = UIImageView()

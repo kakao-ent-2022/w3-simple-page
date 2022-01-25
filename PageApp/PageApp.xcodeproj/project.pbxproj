@@ -10,7 +10,7 @@
 		2E54E7AA279F8A2000DC581F /* Webtoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E54E7A9279F8A2000DC581F /* Webtoon.swift */; };
 		2E54E7AC279F911E00DC581F /* WebtoonJsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E54E7AB279F911E00DC581F /* WebtoonJsonData.swift */; };
 		2E54E7AE279FF1D200DC581F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E54E7AD279FF1D200DC581F /* CartViewController.swift */; };
-		2E577ED5279E9F79007A2774 /* NovelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E577ED4279E9F79007A2774 /* NovelTableViewCell.swift */; };
+		2E577ED5279E9F79007A2774 /* WebtoonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E577ED4279E9F79007A2774 /* WebtoonTableViewCell.swift */; };
 		2EA5FDD2279E64E90000805B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5FDD1279E64E90000805B /* AppDelegate.swift */; };
 		2EA5FDD4279E64E90000805B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5FDD3279E64E90000805B /* SceneDelegate.swift */; };
 		2EA5FDD6279E64E90000805B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5FDD5279E64E90000805B /* ViewController.swift */; };
@@ -24,7 +24,7 @@
 		2E54E7A9279F8A2000DC581F /* Webtoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webtoon.swift; sourceTree = "<group>"; };
 		2E54E7AB279F911E00DC581F /* WebtoonJsonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonJsonData.swift; sourceTree = "<group>"; };
 		2E54E7AD279FF1D200DC581F /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
-		2E577ED4279E9F79007A2774 /* NovelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovelTableViewCell.swift; sourceTree = "<group>"; };
+		2E577ED4279E9F79007A2774 /* WebtoonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonTableViewCell.swift; sourceTree = "<group>"; };
 		2EA5FDCE279E64E90000805B /* PageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EA5FDD1279E64E90000805B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EA5FDD3279E64E90000805B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				2EA5FDD5279E64E90000805B /* ViewController.swift */,
-				2E577ED4279E9F79007A2774 /* NovelTableViewCell.swift */,
+				2E577ED4279E9F79007A2774 /* WebtoonTableViewCell.swift */,
 				2EA5FDE5279E66700000805B /* NovelDataSource.swift */,
 				2E54E7AB279F911E00DC581F /* WebtoonJsonData.swift */,
 				2E54E7AD279FF1D200DC581F /* CartViewController.swift */,
@@ -175,7 +175,7 @@
 				2EA5FDD4279E64E90000805B /* SceneDelegate.swift in Sources */,
 				2E54E7AE279FF1D200DC581F /* CartViewController.swift in Sources */,
 				2E54E7AC279F911E00DC581F /* WebtoonJsonData.swift in Sources */,
-				2E577ED5279E9F79007A2774 /* NovelTableViewCell.swift in Sources */,
+				2E577ED5279E9F79007A2774 /* WebtoonTableViewCell.swift in Sources */,
 				2EA5FDE6279E66700000805B /* NovelDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
