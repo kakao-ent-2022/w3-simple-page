@@ -59,7 +59,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="100" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qth-aP-HsY">
-                                <rect key="frame" x="0.0" y="347" width="414" height="549"/>
+                                <rect key="frame" x="0.0" y="327" width="414" height="569"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WebtoonListCell" rowHeight="104" id="XCT-o2-UBg" customClass="WebtoonTableViewCell" customModule="PageApp" customModuleProvider="target">
@@ -129,7 +129,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="qth-aP-HsY" firstAttribute="top" secondItem="Pdr-yE-FC9" secondAttribute="bottom" constant="20" id="84M-nf-fSW"/>
+                            <constraint firstItem="qth-aP-HsY" firstAttribute="top" secondItem="Pdr-yE-FC9" secondAttribute="bottom" id="84M-nf-fSW"/>
                             <constraint firstItem="Pdr-yE-FC9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ZeY-bg-93Z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qth-aP-HsY" secondAttribute="trailing" id="ct5-nT-yt3"/>
                             <constraint firstItem="qth-aP-HsY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="i87-am-qty"/>
