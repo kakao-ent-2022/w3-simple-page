@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class NovelDataSource: NSObject, UITableViewDataSource {
+class WebtoonDataSource: NSObject, UITableViewDataSource {
     private let cellIdentifier = "cell"
     
     let novels = WebtoonJsonData.convertAsNovel()

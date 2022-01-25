@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    private let novelDataSource = NovelDataSource()
+    private let novelDataSource = WebtoonDataSource()
     let novelTableView = UITableView()
 
     @IBOutlet weak var bannerImageView: UIImageView!
