@@ -16,6 +16,7 @@
 		EA325A66279F088100F450FF /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA325A65279F088100F450FF /* Content.swift */; };
 		EA325A68279F139A00F450FF /* ContentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA325A67279F139A00F450FF /* ContentDataSource.swift */; };
 		EA677391279FE867005DF382 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA677390279FE867005DF382 /* HeaderView.swift */; };
+		EAF52BED27A04B0A003FCA0E /* ContentBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF52BEC27A04B0A003FCA0E /* ContentBasicCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		EA325A65279F088100F450FF /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		EA325A67279F139A00F450FF /* ContentDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDataSource.swift; sourceTree = "<group>"; };
 		EA677390279FE867005DF382 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		EAF52BEC27A04B0A003FCA0E /* ContentBasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBasicCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				EA325A65279F088100F450FF /* Content.swift */,
 				EA325A67279F139A00F450FF /* ContentDataSource.swift */,
 				EA325A57279EFB5B00F450FF /* Main.storyboard */,
+				EAF52BEC27A04B0A003FCA0E /* ContentBasicCell.swift */,
 				EA325A5A279EFB5C00F450FF /* Assets.xcassets */,
 				EA325A5C279EFB5C00F450FF /* LaunchScreen.storyboard */,
 				EA325A5F279EFB5C00F450FF /* Info.plist */,
@@ -153,6 +156,7 @@
 				EA325A52279EFB5B00F450FF /* AppDelegate.swift in Sources */,
 				EA325A54279EFB5B00F450FF /* SceneDelegate.swift in Sources */,
 				EA325A66279F088100F450FF /* Content.swift in Sources */,
+				EAF52BED27A04B0A003FCA0E /* ContentBasicCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,12 +21,15 @@ class ContentDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellConstant.basicContentCell) else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellConstant.basicContentCell) as? ContentBasicCell else {
             fatalError("no cell")
         }
         
-        cell.textLabel?.text = contents[indexPath.row].title
-        cell.detailTextLabel?.text = contents[indexPath.row].author
+        let content = contents[indexPath.row]
+        
+        cell.contentImageView.image = UIImage(named: content.image)
+        cell.contentTitle.text = content.title
+        cell.contentAuthor.text = content.author
         
         return cell
     }
