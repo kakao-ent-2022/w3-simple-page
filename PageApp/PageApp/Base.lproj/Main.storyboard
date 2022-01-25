@@ -84,6 +84,9 @@
                                                     <buttonConfiguration key="configuration" style="plain" title="구매">
                                                         <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="purchaseButtonPushed:" destination="S42-LK-jRP" eventType="touchUpInside" id="QX4-du-NXc"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모시던 아가씨가 도련님이 되어버렸다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mT9-oH-TZA">
                                                     <rect key="frame" x="108" y="20.5" width="224" height="18"/>
@@ -134,7 +137,7 @@
                     <navigationItem key="navigationItem" title="emoticon" id="Xm4-NC-Xi6">
                         <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="dlE-d8-oE8">
                             <connections>
-                                <segue destination="4oa-Li-gfb" kind="show" id="tXe-Zd-QVf"/>
+                                <segue destination="Czg-Ew-Gve" kind="show" identifier="showHistory" id="fPi-hD-8F8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -149,22 +152,49 @@
             <point key="canvasLocation" x="1731.8840579710147" y="300.66964285714283"/>
         </scene>
         <!--History-->
-        <scene sceneID="opG-7Y-6oy">
+        <scene sceneID="YEh-DS-jON">
             <objects>
-                <viewController id="4oa-Li-gfb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jeS-sQ-hoR">
+                <tableViewController id="Czg-Ew-Gve" customClass="PurchaseViewController" customModule="PageApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="5Vx-XK-Gns">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="dcg-RP-S20"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="History" id="Mze-6M-kw0">
-                        <barButtonItem key="rightBarButtonItem" title="Clear" id="aic-hn-fqU"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r2E-KU-wxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="default" textLabel="Nxl-xH-3ng" detailTextLabel="7Wf-8G-QTM" style="IBUITableViewCellStyleValue1" id="RTo-BL-BYG">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RTo-BL-BYG" id="hLr-VQ-0GM">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nxl-xH-3ng">
+                                            <rect key="frame" x="20" y="15" width="25" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Wf-8G-QTM">
+                                            <rect key="frame" x="361" y="15" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Czg-Ew-Gve" id="IQA-Ra-haC"/>
+                            <outlet property="delegate" destination="Czg-Ew-Gve" id="YFQ-dv-lxG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="History" id="KbN-il-O0p"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E6P-ER-Thx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2797" y="17"/>
+            <point key="canvasLocation" x="2686" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="miy-EK-wwS">

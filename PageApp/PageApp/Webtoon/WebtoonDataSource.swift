@@ -26,7 +26,6 @@ class WebtoonDataSource: NSObject, UITableViewDataSource {
         
         let item = WebtoonModel(title: list[indexPath.row]["title"]!, author: list[indexPath.row]["author"]!, imagePath: list[indexPath.row]["image"]!)
         
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath) as! WebtoonCell
         cell.titleLabel.text = item.title
         cell.authorLabel.text = item.author

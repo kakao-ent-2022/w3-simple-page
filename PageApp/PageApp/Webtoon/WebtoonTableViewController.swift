@@ -10,7 +10,8 @@ import UIKit
 
 class WebtoonTableViewController: UIViewController {
     
-    var dataSource: UITableViewDataSource!
+    fileprivate var dataSource: UITableViewDataSource?
+    var purchaseDataSource: PurchaseDataSource = PurchaseDataSource()
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var imageView: UIImageView!
@@ -19,10 +20,22 @@ class WebtoonTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bannerLabel.text = "카카오뱅크와 함께\n26주적금 챌린지"
-        bannerLabel.numberOfLines = 2 
+        bannerLabel.numberOfLines = 2
+        
         let dataSource = WebtoonDataSource()
         tableView.dataSource = dataSource
         self.dataSource = dataSource
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("purchase"), object: nil, queue: nil) {(notification) in
+            if let purchasedItem = notification.object as? WebtoonCell, let name = purchasedItem.titleLabel.text {
+                self.purchaseDataSource.data.append(PurchaseModel(name: name))
+            }
+        }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showHistory", let destination = segue.destination as? PurchaseViewController {
+            destination.tableView.dataSource = purchaseDataSource
+        }
+    }
 }
