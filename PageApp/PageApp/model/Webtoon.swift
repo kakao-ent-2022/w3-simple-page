@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Novel {
+struct Webtoon {
     var title: String
     var author: String
     var image: String

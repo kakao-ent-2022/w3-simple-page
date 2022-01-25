@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NovelJsonData {
+class WebtoonJsonData {
     private enum NovelKey: String {
         case title = "title"
         case author = "author"
@@ -30,9 +30,9 @@ class NovelJsonData {
     [ "title" : "여주 죽고 미친 남주의 친구입니다", "author" : "메미칼린", "image" : "novel4.png" ]
     ]
     
-    static func convertAsNovel() -> [Novel] {
+    static func convertAsNovel() -> [Webtoon] {
         return novelRawSource.map{
-            Novel(title: $0[NovelKey.title.rawValue]!,
+            Webtoon(title: $0[NovelKey.title.rawValue]!,
                   author: $0[NovelKey.author.rawValue]!,
                   image: $0[NovelKey.image.rawValue]!)
         }

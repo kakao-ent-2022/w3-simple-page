@@ -11,7 +11,7 @@ import UIKit
 class NovelDataSource: NSObject, UITableViewDataSource {
     private let cellIdentifier = "cell"
     
-    let novels = NovelJsonData.convertAsNovel()
+    let novels = WebtoonJsonData.convertAsNovel()
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
