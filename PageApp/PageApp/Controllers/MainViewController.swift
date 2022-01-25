@@ -29,4 +29,9 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configure(webtoonViewModel: webtoonViewModel)
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let cartVC = segue.destination as? CartViewController else { return }
+        cartVC.purchaseListViewModel = self.purchaseViewModel
+    }
 }

@@ -8,10 +8,31 @@
 import Foundation
 
 protocol Purchasable {
+    var purchaseCount: Int { get }
     func makePurchase(webtoon: WebtoonViewModel)
-    func retrievePurchase(at index: Int) -> Purchase?
+    func retrievePurchase(at index: Int) -> PurchaseViewModel?
     func remove(at Index: Int)
     func removeAll()
+}
+
+struct PurchaseViewModel {
+    private let purchase: Purchase
+    
+    init(_ purchase: Purchase) {
+        self.purchase = purchase
+    }
+    
+    var purchaseWebtoonTitle: String {
+        return self.purchase.webtoon.title
+    }
+    
+    var purchaseTimeString: String {
+        let date = self.purchase.purchaseTime
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "YYYY-MM-dd hh:mm:ss"
+        return dateFormatter.string(from: date)
+    }
 }
 
 class PurchaseListViewModel: Purchasable {
@@ -29,8 +50,8 @@ class PurchaseListViewModel: Purchasable {
         purchases.append(purchase)
     }
     
-    func retrievePurchase(at index: Int) -> Purchase? {
-        return index <= purchaseCount ? purchases[index] : nil
+    func retrievePurchase(at index: Int) -> PurchaseViewModel? {
+        return index <= purchaseCount ? PurchaseViewModel(purchases[index]) : nil
     }
     
     func remove(at index: Int) {

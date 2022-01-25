@@ -141,7 +141,7 @@
                     <navigationItem key="navigationItem" title="Simple Page" id="EsA-BC-RxS">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="cart.fill" catalog="system" id="fDB-dA-3Zw">
                             <connections>
-                                <segue destination="SiT-P2-yPR" kind="show" id="ZHx-5M-NFD"/>
+                                <segue destination="SiT-P2-yPR" kind="show" identifier="toHistory" id="ZHx-5M-NFD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -159,7 +159,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="u7c-d9-cek" detailTextLabel="iVz-PG-5Av" style="IBUITableViewCellStyleValue1" id="flm-PH-9W7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="purchaseHistoryCell" textLabel="u7c-d9-cek" detailTextLabel="iVz-PG-5Av" style="IBUITableViewCellStyleValue1" id="flm-PH-9W7">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="flm-PH-9W7" id="JDW-Qk-ppO">
