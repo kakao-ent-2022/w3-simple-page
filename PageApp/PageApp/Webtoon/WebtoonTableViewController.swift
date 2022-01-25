@@ -17,6 +17,7 @@ class WebtoonTableViewController: UIViewController {
     @IBOutlet var bannerLabel: UILabel!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         bannerLabel.text = "카카오뱅크와 함께\n26주적금 챌린지"
         bannerLabel.numberOfLines = 2 
         let dataSource = WebtoonDataSource()

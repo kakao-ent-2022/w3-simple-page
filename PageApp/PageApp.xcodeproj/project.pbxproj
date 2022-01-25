@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5E790C34279E4F42003AF8DA /* WebtoonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E790C33279E4F42003AF8DA /* WebtoonTableViewController.swift */; };
 		5E790C36279E988E003AF8DA /* WebtoonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E790C35279E988E003AF8DA /* WebtoonCell.swift */; };
+		5E790C38279FC079003AF8DA /* UITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E790C37279FC079003AF8DA /* UITableViewController.swift */; };
+		5E790C3A279FC132003AF8DA /* WebtoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E790C39279FC132003AF8DA /* WebtoonModel.swift */; };
 		5ED7E50B279E45B1009ED7F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7E50A279E45B1009ED7F7 /* AppDelegate.swift */; };
 		5ED7E50D279E45B1009ED7F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7E50C279E45B1009ED7F7 /* SceneDelegate.swift */; };
 		5ED7E512279E45B1009ED7F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED7E510279E45B1009ED7F7 /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		5E790C33279E4F42003AF8DA /* WebtoonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonTableViewController.swift; sourceTree = "<group>"; };
 		5E790C35279E988E003AF8DA /* WebtoonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonCell.swift; sourceTree = "<group>"; };
+		5E790C37279FC079003AF8DA /* UITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewController.swift; sourceTree = "<group>"; };
+		5E790C39279FC132003AF8DA /* WebtoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonModel.swift; sourceTree = "<group>"; };
 		5ED7E507279E45B1009ED7F7 /* PageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED7E50A279E45B1009ED7F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ED7E50C279E45B1009ED7F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 				5ED7E50A279E45B1009ED7F7 /* AppDelegate.swift */,
 				5ED7E50C279E45B1009ED7F7 /* SceneDelegate.swift */,
 				5ED7E510279E45B1009ED7F7 /* Main.storyboard */,
+				5E790C37279FC079003AF8DA /* UITableViewController.swift */,
 				5ED7E513279E45B1009ED7F7 /* Assets.xcassets */,
 				5ED7E515279E45B1009ED7F7 /* LaunchScreen.storyboard */,
 				5ED7E518279E45B1009ED7F7 /* Info.plist */,
@@ -137,6 +142,7 @@
 				5ED7E53D279E4663009ED7F7 /* WebtoonDataSource.swift */,
 				5E790C33279E4F42003AF8DA /* WebtoonTableViewController.swift */,
 				5E790C35279E988E003AF8DA /* WebtoonCell.swift */,
+				5E790C39279FC132003AF8DA /* WebtoonModel.swift */,
 			);
 			path = Webtoon;
 			sourceTree = "<group>";
@@ -272,9 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E790C3A279FC132003AF8DA /* WebtoonModel.swift in Sources */,
 				5E790C36279E988E003AF8DA /* WebtoonCell.swift in Sources */,
 				5ED7E53E279E4663009ED7F7 /* WebtoonDataSource.swift in Sources */,
 				5ED7E50B279E45B1009ED7F7 /* AppDelegate.swift in Sources */,
+				5E790C38279FC079003AF8DA /* UITableViewController.swift in Sources */,
 				5E790C34279E4F42003AF8DA /* WebtoonTableViewController.swift in Sources */,
 				5ED7E50D279E45B1009ED7F7 /* SceneDelegate.swift in Sources */,
 			);
