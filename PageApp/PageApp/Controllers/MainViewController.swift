@@ -30,6 +30,10 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let cartVC = segue.destination as? CartViewController else { return }
         cartVC.purchaseListViewModel = self.purchaseViewModel
