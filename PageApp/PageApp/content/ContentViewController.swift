@@ -21,11 +21,11 @@ class ContentViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var contentTableView: UITableView!
     
     private let contentDataSource = ContentDataSource()
-    lazy var contents = Content.jsonToContents()
+    private lazy var contents = Content.jsonToContents()
         
-    let notificationCenter: NotificationCenter = .default
-    let operatoinQueue = OperationQueue()
-    var carts: [Cart] = []
+    private let notificationCenter: NotificationCenter = .default
+    private let operatoinQueue = OperationQueue()
+    private lazy var cartTrade: Tradable = CartTrade()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class ContentViewController: UIViewController, UITableViewDelegate {
             queue: operatoinQueue
         ) { (notification) in
             if let cart = notification.object as? Cart {
-                self.carts.append(cart)
+                self.cartTrade.buy(cart: cart)
             }
         }
     }
@@ -61,7 +61,7 @@ class ContentViewController: UIViewController, UITableViewDelegate {
     }
     
     @objc func moveToCartVC() {
-        performSegue(withIdentifier: ContentConstant.moveCartVCSegue, sender: carts)
+        performSegue(withIdentifier: ContentConstant.moveCartVCSegue, sender: nil)
     }
     
     private func initTableView() {

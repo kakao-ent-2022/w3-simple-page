@@ -17,8 +17,20 @@
 		EA325A68279F139A00F450FF /* ContentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA325A67279F139A00F450FF /* ContentDataSource.swift */; };
 		EACEADDC27A141D100F52CA1 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACEADDB27A141D100F52CA1 /* CartViewController.swift */; };
 		EACEADDF27A1809300F52CA1 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACEADDE27A1809300F52CA1 /* Cart.swift */; };
+		EACEADE727A194B700F52CA1 /* CartTradeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACEADE627A194B700F52CA1 /* CartTradeTests.swift */; };
+		EACEADEE27A19B2E00F52CA1 /* CartTrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACEADED27A19B2E00F52CA1 /* CartTrade.swift */; };
 		EAF52BED27A04B0A003FCA0E /* ContentBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF52BEC27A04B0A003FCA0E /* ContentBasicCell.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EACEADE827A194B700F52CA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA325A46279EFB5B00F450FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA325A4D279EFB5B00F450FF;
+			remoteInfo = PageApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		EA325A4E279EFB5B00F450FF /* PageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,11 +45,21 @@
 		EA325A67279F139A00F450FF /* ContentDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDataSource.swift; sourceTree = "<group>"; };
 		EACEADDB27A141D100F52CA1 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		EACEADDE27A1809300F52CA1 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		EACEADE427A194B700F52CA1 /* PageAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PageAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EACEADE627A194B700F52CA1 /* CartTradeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTradeTests.swift; sourceTree = "<group>"; };
+		EACEADED27A19B2E00F52CA1 /* CartTrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTrade.swift; sourceTree = "<group>"; };
 		EAF52BEC27A04B0A003FCA0E /* ContentBasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBasicCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EA325A4B279EFB5B00F450FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EACEADE127A194B700F52CA1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -51,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				EA325A50279EFB5B00F450FF /* PageApp */,
+				EACEADE527A194B700F52CA1 /* PageAppTests */,
 				EA325A4F279EFB5B00F450FF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				EA325A4E279EFB5B00F450FF /* PageApp.app */,
+				EACEADE427A194B700F52CA1 /* PageAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				EACEADDB27A141D100F52CA1 /* CartViewController.swift */,
+				EACEADED27A19B2E00F52CA1 /* CartTrade.swift */,
 			);
 			path = cart;
 			sourceTree = "<group>";
@@ -112,6 +137,14 @@
 				EACEADDE27A1809300F52CA1 /* Cart.swift */,
 			);
 			path = dto;
+			sourceTree = "<group>";
+		};
+		EACEADE527A194B700F52CA1 /* PageAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				EACEADE627A194B700F52CA1 /* CartTradeTests.swift */,
+			);
+			path = PageAppTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +167,24 @@
 			productReference = EA325A4E279EFB5B00F450FF /* PageApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EACEADE327A194B700F52CA1 /* PageAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EACEADEA27A194B700F52CA1 /* Build configuration list for PBXNativeTarget "PageAppTests" */;
+			buildPhases = (
+				EACEADE027A194B700F52CA1 /* Sources */,
+				EACEADE127A194B700F52CA1 /* Frameworks */,
+				EACEADE227A194B700F52CA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EACEADE927A194B700F52CA1 /* PBXTargetDependency */,
+			);
+			name = PageAppTests;
+			productName = PageAppTests;
+			productReference = EACEADE427A194B700F52CA1 /* PageAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -146,6 +197,10 @@
 				TargetAttributes = {
 					EA325A4D279EFB5B00F450FF = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					EACEADE327A194B700F52CA1 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = EA325A4D279EFB5B00F450FF;
 					};
 				};
 			};
@@ -163,6 +218,7 @@
 			projectRoot = "";
 			targets = (
 				EA325A4D279EFB5B00F450FF /* PageApp */,
+				EACEADE327A194B700F52CA1 /* PageAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -175,6 +231,13 @@
 				EA325A5E279EFB5C00F450FF /* LaunchScreen.storyboard in Resources */,
 				EA325A5B279EFB5C00F450FF /* Assets.xcassets in Resources */,
 				EA325A59279EFB5B00F450FF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EACEADE227A194B700F52CA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,11 +255,28 @@
 				EA325A54279EFB5B00F450FF /* SceneDelegate.swift in Sources */,
 				EA325A66279F088100F450FF /* Content.swift in Sources */,
 				EAF52BED27A04B0A003FCA0E /* ContentBasicCell.swift in Sources */,
+				EACEADEE27A19B2E00F52CA1 /* CartTrade.swift in Sources */,
 				EACEADDF27A1809300F52CA1 /* Cart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EACEADE027A194B700F52CA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EACEADE727A194B700F52CA1 /* CartTradeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EACEADE927A194B700F52CA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA325A4D279EFB5B00F450FF /* PageApp */;
+			targetProxy = EACEADE827A194B700F52CA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EA325A57279EFB5B00F450FF /* Main.storyboard */ = {
@@ -388,6 +468,40 @@
 			};
 			name = Release;
 		};
+		EACEADEB27A194B700F52CA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.river.PageAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PageApp.app/PageApp";
+			};
+			name = Debug;
+		};
+		EACEADEC27A194B700F52CA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.river.PageAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PageApp.app/PageApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -405,6 +519,15 @@
 			buildConfigurations = (
 				EA325A63279EFB5C00F450FF /* Debug */,
 				EA325A64279EFB5C00F450FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EACEADEA27A194B700F52CA1 /* Build configuration list for PBXNativeTarget "PageAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EACEADEB27A194B700F52CA1 /* Debug */,
+				EACEADEC27A194B700F52CA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
