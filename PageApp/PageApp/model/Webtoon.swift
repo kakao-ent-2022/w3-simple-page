@@ -7,8 +7,30 @@
 
 import Foundation
 
-struct Webtoon {
+class Webtoon: NSObject {
     var title: String
     var author: String
     var image: String
+    @objc dynamic var isOnSale: Bool
+    
+    convenience init(title: String, author: String, image: String) {
+        self.init(title: title, author: author, image: image, isOnSale: true)
+    }
+    
+    required init (title: String, author: String, image: String, isOnSale: Bool) {
+        self.title = title
+        self.author = author
+        self.image = image
+        self.isOnSale = isOnSale
+    }
+    
+    func setIsOnSale(value: Bool) {
+        isOnSale = value
+    }
+    
+    static func == (lhs: Webtoon, rhs: Webtoon) -> Bool {
+        return lhs.title == rhs.title
+            && lhs.author == rhs.author
+            && lhs.image == rhs.image
+    }
 }
