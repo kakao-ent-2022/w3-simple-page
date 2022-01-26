@@ -49,9 +49,33 @@ class PurchaseUITests: XCTestCase {
         
         let firstPurchased = firstPurchaseItem.children(matching: .staticText).element(boundBy: 0).label
         XCTAssertEqual(cartTable.cells.containing(.staticText, identifier: firstPurchased).count, 1)
-
         let secondPurchased = secondPurchaseItem.children(matching: .staticText).element(boundBy: 0).label
         XCTAssertEqual(cartTable.cells.containing(.staticText, identifier: secondPurchased).count, 2)
+        
+    }
+    
+    func test_히스토리가_정상적으로_삭제되는지() throws{
+                
+        let app = XCUIApplication()
+
+        let tableQuery = app.tables
+        let firstPurchaseItem = tableQuery.cells.element(boundBy: 0)
+        let secondPurchaseItem = tableQuery.cells.element(boundBy: 1)
+
+        firstPurchaseItem.buttons["구매"].tap()
+        secondPurchaseItem.buttons["구매"].tap()
+        secondPurchaseItem.buttons["구매"].tap()
+
+
+        // open history view controller
+        app.navigationBars["emoticon"].buttons["shopping cart"].tap()
+
+
+        let firstPurchased = firstPurchaseItem.children(matching: .staticText).element(boundBy: 0).label
+        tableQuery.cells.containing(.staticText, identifier:"모시던 아가씨가 도련님이 되어버렸다").element.swipeLeft()
+        tableQuery.cells.containing(.staticText, identifier:"모시던 아가씨가 도련님이 되어버렸다").buttons["Delete"].tap()
+        XCTAssertEqual(tableQuery.children(matching: .cell).count, 2)
+        XCTAssertTrue(!tableQuery.cells.containing(.staticText, identifier: firstPurchased).element.exists)
         
     }
 
