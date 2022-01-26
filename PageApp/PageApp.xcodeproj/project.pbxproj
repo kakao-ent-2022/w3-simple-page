@@ -161,11 +161,11 @@
 		5ED7E53A279E4639009ED7F7 /* Webtoon */ = {
 			isa = PBXGroup;
 			children = (
-				5ED7E53D279E4663009ED7F7 /* WebtoonDataSource.swift */,
 				5E790C4A27A0EB97003AF8DA /* webtoons.json */,
 				5E790C33279E4F42003AF8DA /* WebtoonTableViewController.swift */,
 				5E790C35279E988E003AF8DA /* WebtoonCell.swift */,
 				5E790C39279FC132003AF8DA /* WebtoonModel.swift */,
+				5ED7E53D279E4663009ED7F7 /* WebtoonDataSource.swift */,
 			);
 			path = Webtoon;
 			sourceTree = "<group>";

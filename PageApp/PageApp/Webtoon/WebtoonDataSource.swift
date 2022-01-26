@@ -55,8 +55,10 @@ class WebtoonDataSource: NSObject, UITableViewDataSource {
         cell.authorLabel.text = item.author
         cell.picture.image = item.image
         cell.webtoonModel = item
+        cell.selectionStyle = .none
         return cell
     }
+    
 }
 
 

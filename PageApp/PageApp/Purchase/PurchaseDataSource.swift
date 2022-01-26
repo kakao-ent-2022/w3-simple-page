@@ -22,6 +22,15 @@ class PurchaseDataSource: NSObject, UITableViewDataSource {
         content.text = item.name
         content.secondaryText = item.createdAt
         cell.contentConfiguration = content
+
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            data.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .none)
+        }
     }
 }
