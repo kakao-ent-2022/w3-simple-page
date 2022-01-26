@@ -13,6 +13,10 @@
 		5E790C3A279FC132003AF8DA /* WebtoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E790C39279FC132003AF8DA /* WebtoonModel.swift */; };
 		5E790C3D279FCCB9003AF8DA /* PurchaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E790C3C279FCCB9003AF8DA /* PurchaseModel.swift */; };
 		5E790C3F279FCDF5003AF8DA /* PurchaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E790C3E279FCDF5003AF8DA /* PurchaseDataSource.swift */; };
+		5E790C45279FE580003AF8DA /* PurchaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E790C44279FE580003AF8DA /* PurchaseTest.swift */; };
+		5E790C47279FF5E1003AF8DA /* PurchaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E790C46279FF5E1003AF8DA /* PurchaseUITests.swift */; };
+		5E790C4B27A0EB97003AF8DA /* webtoons.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E790C4A27A0EB97003AF8DA /* webtoons.json */; };
+		5E790C4D27A10324003AF8DA /* errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E790C4C27A10324003AF8DA /* errors.swift */; };
 		5ED7E50B279E45B1009ED7F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7E50A279E45B1009ED7F7 /* AppDelegate.swift */; };
 		5ED7E50D279E45B1009ED7F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7E50C279E45B1009ED7F7 /* SceneDelegate.swift */; };
 		5ED7E512279E45B1009ED7F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED7E510279E45B1009ED7F7 /* Main.storyboard */; };
@@ -48,6 +52,10 @@
 		5E790C39279FC132003AF8DA /* WebtoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonModel.swift; sourceTree = "<group>"; };
 		5E790C3C279FCCB9003AF8DA /* PurchaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseModel.swift; sourceTree = "<group>"; };
 		5E790C3E279FCDF5003AF8DA /* PurchaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseDataSource.swift; sourceTree = "<group>"; };
+		5E790C44279FE580003AF8DA /* PurchaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseTest.swift; sourceTree = "<group>"; };
+		5E790C46279FF5E1003AF8DA /* PurchaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseUITests.swift; sourceTree = "<group>"; };
+		5E790C4A27A0EB97003AF8DA /* webtoons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = webtoons.json; sourceTree = "<group>"; };
+		5E790C4C27A10324003AF8DA /* errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errors.swift; sourceTree = "<group>"; };
 		5ED7E507279E45B1009ED7F7 /* PageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED7E50A279E45B1009ED7F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ED7E50C279E45B1009ED7F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +134,7 @@
 				5ED7E50A279E45B1009ED7F7 /* AppDelegate.swift */,
 				5ED7E50C279E45B1009ED7F7 /* SceneDelegate.swift */,
 				5ED7E510279E45B1009ED7F7 /* Main.storyboard */,
+				5E790C4C27A10324003AF8DA /* errors.swift */,
 				5ED7E513279E45B1009ED7F7 /* Assets.xcassets */,
 				5ED7E515279E45B1009ED7F7 /* LaunchScreen.storyboard */,
 				5ED7E518279E45B1009ED7F7 /* Info.plist */,
@@ -137,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				5ED7E521279E45B1009ED7F7 /* PageAppTests.swift */,
+				5E790C44279FE580003AF8DA /* PurchaseTest.swift */,
 			);
 			path = PageAppTests;
 			sourceTree = "<group>";
@@ -146,6 +156,7 @@
 			children = (
 				5ED7E52B279E45B1009ED7F7 /* PageAppUITests.swift */,
 				5ED7E52D279E45B1009ED7F7 /* PageAppUITestsLaunchTests.swift */,
+				5E790C46279FF5E1003AF8DA /* PurchaseUITests.swift */,
 			);
 			path = PageAppUITests;
 			sourceTree = "<group>";
@@ -154,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				5ED7E53D279E4663009ED7F7 /* WebtoonDataSource.swift */,
+				5E790C4A27A0EB97003AF8DA /* webtoons.json */,
 				5E790C33279E4F42003AF8DA /* WebtoonTableViewController.swift */,
 				5E790C35279E988E003AF8DA /* WebtoonCell.swift */,
 				5E790C39279FC132003AF8DA /* WebtoonModel.swift */,
@@ -266,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED7E517279E45B1009ED7F7 /* LaunchScreen.storyboard in Resources */,
+				5E790C4B27A0EB97003AF8DA /* webtoons.json in Resources */,
 				5ED7E514279E45B1009ED7F7 /* Assets.xcassets in Resources */,
 				5ED7E512279E45B1009ED7F7 /* Main.storyboard in Resources */,
 			);
@@ -294,6 +307,7 @@
 			files = (
 				5E790C3A279FC132003AF8DA /* WebtoonModel.swift in Sources */,
 				5E790C36279E988E003AF8DA /* WebtoonCell.swift in Sources */,
+				5E790C4D27A10324003AF8DA /* errors.swift in Sources */,
 				5E790C3D279FCCB9003AF8DA /* PurchaseModel.swift in Sources */,
 				5ED7E53E279E4663009ED7F7 /* WebtoonDataSource.swift in Sources */,
 				5ED7E50B279E45B1009ED7F7 /* AppDelegate.swift in Sources */,
@@ -308,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E790C45279FE580003AF8DA /* PurchaseTest.swift in Sources */,
 				5ED7E522279E45B1009ED7F7 /* PageAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E790C47279FF5E1003AF8DA /* PurchaseUITests.swift in Sources */,
 				5ED7E52C279E45B1009ED7F7 /* PageAppUITests.swift in Sources */,
 				5ED7E52E279E45B1009ED7F7 /* PageAppUITestsLaunchTests.swift in Sources */,
 			);
