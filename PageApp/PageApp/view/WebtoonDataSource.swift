@@ -10,27 +10,36 @@ import UIKit
 
 class WebtoonDataSource: NSObject, UITableViewDataSource {
     private let cellIdentifier = "cell"
+    private var purchaseButtonAction: ((Webtoon) -> ())?
     
-    let novels = WebtoonJsonData.convertAsNovel()
+    let webtoons: [Webtoon]
+    
+    init(source: [Webtoon], purchaseButtonAction: @escaping (Webtoon) -> ()) {
+        webtoons = source
+        self.purchaseButtonAction = purchaseButtonAction
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return novels.count
+        return webtoons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         as! WebtoonTableViewCell
         
-        let row = indexPath.row
-        let thumbnail = novels[row].image
-        cell.thumbnailImageView.image = UIImage(named: thumbnail)
-        cell.titleLabel.text = novels[row].title
-        cell.authorLabel.text = novels[row].author
+        let webtoon = webtoons[indexPath.row]
+        cell.bindWebtoon(webtoon: webtoon)
         
+        if purchaseButtonAction != nil {
+            cell.setPurchaseButtonAction {
+                self.purchaseButtonAction!(webtoon)
+            }
+        }
+
         return cell
     }
 }

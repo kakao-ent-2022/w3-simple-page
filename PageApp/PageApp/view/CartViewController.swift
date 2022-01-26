@@ -8,10 +8,10 @@
 import UIKit
 
 class CartViewController: UITableViewController {
+    static let identifier = "CartViewController"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
