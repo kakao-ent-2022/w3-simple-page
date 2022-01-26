@@ -19,7 +19,7 @@ class CartTradeTests: XCTestCase {
                     Cart(title: "용이 비를 내리는 나라")])
     }
 
-    func 작품_구매_테스트() throws {
+    func test_작품_구매() throws {
         // given
         let cart = Cart(title: "여주 죽고 미친 남주의 친구입니다")
         
@@ -31,15 +31,23 @@ class CartTradeTests: XCTestCase {
         XCTAssertEqual(sut.getList().last?.title, "여주 죽고 미친 남주의 친구입니다")
     }
     
-    func 작품_전체_개수_테스트() throws {
+    func test_작품_전체_개수() throws {
         // then
         XCTAssertEqual(sut.getListCount(), 3)
     }
     
-    func 두번째_작품_구매이력_테스트() throws {
+    func test_두번째_작품_구매이력() throws {
         // when
         let secondContent = sut.getCartByIndex(index: 2-1)
         
         XCTAssertEqual(secondContent?.title, "압도적 그대")
+    }
+    
+    func test_작품_삭제() throws {
+        // when
+        sut.delete(index: 1)
+        
+        XCTAssertEqual(sut.getListCount(), 2)
+        XCTAssertNotEqual(sut.getCartByIndex(index: 1)?.title, "압도적 그대")
     }
 }

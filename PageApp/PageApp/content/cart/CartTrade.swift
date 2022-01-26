@@ -13,6 +13,7 @@ protocol Tradable {
     func getList() -> [Cart]
     func getListCount() -> Int
     func getCartByIndex(index: Int) -> Cart?
+    func delete(index: Int)
 }
 
 class CartTrade: Tradable {
@@ -37,4 +38,9 @@ class CartTrade: Tradable {
     func getCartByIndex(index: Int) -> Cart? {
         return index >= getListCount() ? nil : carts[index]
     }
+    
+    func delete(index: Int) {
+        carts.remove(at: index)
+    }
+    
 }
