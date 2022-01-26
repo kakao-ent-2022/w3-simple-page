@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PurchaseModel {
+struct HistoryModel {
     var name: String
     var _createdAt: Date
     var createdAt: String {

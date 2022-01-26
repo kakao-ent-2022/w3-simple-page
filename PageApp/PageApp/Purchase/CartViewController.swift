@@ -7,17 +7,15 @@
 
 import UIKit
 
-class PurchaseViewController: UITableViewController {
+class CartViewController: UITableViewController {
     
-    fileprivate var dataSource: PurchaseDataSource?
-    var data: [PurchaseModel]?
+    fileprivate var dataSource: HistoryListDataSource?
+    var data: [HistoryModel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource = PurchaseDataSource()
-        dataSource?.data = data ?? []
+        dataSource = HistoryListDataSource(histories: data ?? [])
         tableView.dataSource = dataSource
     }
     
-
 }

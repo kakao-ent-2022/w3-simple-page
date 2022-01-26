@@ -11,7 +11,7 @@ import UIKit
 class WebtoonTableViewController: UIViewController {
     
     fileprivate var dataSource: UITableViewDataSource?
-    var data: [PurchaseModel] = []
+    var data: [HistoryModel] = []
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var imageView: UIImageView!
@@ -28,13 +28,13 @@ class WebtoonTableViewController: UIViewController {
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name("purchase"), object: nil, queue: nil) {(notification) in
             if let purchasedItem = notification.object as? WebtoonModel {
-                self.data.append(PurchaseModel(name: purchasedItem.title))
+                self.data.append(HistoryModel(name: purchasedItem.title))
             }
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showHistory", let destination = segue.destination as? PurchaseViewController {
+        if segue.identifier == "showHistory", let destination = segue.destination as? CartViewController {
             destination.data = self.data
         }
     }

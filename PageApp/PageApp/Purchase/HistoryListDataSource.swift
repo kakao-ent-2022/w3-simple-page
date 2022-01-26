@@ -8,15 +8,20 @@
 import UIKit
 
 
-class PurchaseDataSource: NSObject, UITableViewDataSource {
-    var data: [PurchaseModel] = []
+class HistoryListDataSource: NSObject, UITableViewDataSource {
+    var historiesVM: HistoryListViewModel!
+    
+    init(histories: [HistoryModel]) {
+        historiesVM = HistoryListViewModelImpl(histories: histories)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return historiesVM.numberOfRowsInSection(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = data[indexPath.row]
+        let item = historiesVM.get(at: indexPath.row)
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath)
         var content = UIListContentConfiguration.valueCell()
         content.text = item.name
@@ -29,7 +34,7 @@ class PurchaseDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            data.remove(at: indexPath.row)
+            historiesVM.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .none)
         }
     }

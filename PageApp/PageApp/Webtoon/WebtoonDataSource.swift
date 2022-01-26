@@ -8,47 +8,21 @@
 import UIKit
 
 class WebtoonDataSource: NSObject, UITableViewDataSource {
-    var list: [WebtoonModel] = []
+    var webtoonVM: WebtoonListViewModel
     
     override init() {
+        webtoonVM = WebtoonListViewModelImpl()
         super.init()
-        if let data = try? getData() {
-            list = data
-        }
     }
     
-    private func getData() throws -> [WebtoonModel]? {
-        guard let path = Bundle.main.path(forResource: "webtoons", ofType: "json"),
-            let jsonString = try? String(contentsOfFile: path) else {
-                throw CommonError.DataError
-        }
-        
-        let decoder = JSONDecoder()
-        let data = jsonString.data(using: .utf8)
-        
-        if let data = data, let webtoon = try? decoder.decode([WebtoonModel].self, from: data) {
-            list = webtoon
-        }
-        throw CommonError.DataError
-    }
-    
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return list.count
-        default:
-            return 0
-        }
+        return webtoonVM.numberOfRowsInSection(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let item = list[indexPath.row]
+        let item = webtoonVM.get(at: indexPath.row)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath) as! WebtoonCell
         cell.titleLabel.text = item.title
