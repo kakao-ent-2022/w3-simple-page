@@ -13,7 +13,6 @@ class WebtoonJsonData {
         case author = "author"
         case image = "image"
     }
-
     
     private static let novelRawSource = [
     [ "title" : "모시던 아가씨가 도련님이 되어버렸다", "author" : "시그마,태비의별", "image" : "wait1.png" ],
