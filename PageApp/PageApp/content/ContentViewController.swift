@@ -10,6 +10,7 @@ import UIKit
 
 enum ContentConstant {
     static let moveCartVCSegue = "moveCartVC"
+    static let navigationTitle = "Content Page"
 }
 
 extension Notification.Name {
@@ -48,7 +49,7 @@ class ContentViewController: UIViewController, UITableViewDelegate {
     }
     
     private func initNavigationBar() {
-        navigationItem.title = "Content Page"
+        navigationItem.title = ContentConstant.navigationTitle
         
         let cartButton: UIButton = {
             let button = UIButton()
@@ -68,6 +69,14 @@ class ContentViewController: UIViewController, UITableViewDelegate {
         contentTableView.delegate = self
         contentTableView.dataSource = contentDataSource
         contentDataSource.contents = contents
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == ContentConstant.moveCartVCSegue {
+            if let destination = segue.destination as? CartViewController {
+                destination.cartTrade = self.cartTrade
+            }
+        }
     }
 }
 

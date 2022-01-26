@@ -38,8 +38,8 @@ class CartTradeTests: XCTestCase {
     
     func 두번째_작품_구매이력_테스트() throws {
         // when
-        let secondContent = sut.getList()[1]
+        let secondContent = sut.getCartByIndex(index: 2-1)
         
-        XCTAssertEqual(secondContent.title, "압도적 그대")
+        XCTAssertEqual(secondContent?.title, "압도적 그대")
     }
 }

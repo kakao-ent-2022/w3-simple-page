@@ -7,39 +7,48 @@
 
 import UIKit
 
-class CartTableViewController: UITableViewController {
+enum CartConstant {
+    static let basicCartCell = "BasicCartCell"
+    static let navigationTitle = "Purchase History"
+}
 
+class CartViewController: UITableViewController {
+    
+    var cartTrade: Tradable?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        initNavigationBar()
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    private func initNavigationBar() {
+        navigationItem.title = CartConstant.navigationTitle
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return cartTrade?.getListCount() ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CartConstant.basicCartCell) else {
+            fatalError("no cell")
+        }
+        
+        guard let cartTrade = cartTrade else {
+            fatalError("no cart trade")
+        }
+        
+        guard let cart = cartTrade.getCartByIndex(index: indexPath.row) else {
+            fatalError("no cart")
+        }
+        
+        cell.textLabel?.text = cart.title
+        cell.detailTextLabel?.text = cart.purchaseDate
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

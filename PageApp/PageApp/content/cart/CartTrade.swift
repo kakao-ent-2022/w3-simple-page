@@ -12,6 +12,7 @@ protocol Tradable {
     func buy(cart: Cart)
     func getList() -> [Cart]
     func getListCount() -> Int
+    func getCartByIndex(index: Int) -> Cart?
 }
 
 class CartTrade: Tradable {
@@ -31,5 +32,9 @@ class CartTrade: Tradable {
     
     func getListCount() -> Int {
         return carts.count
+    }
+    
+    func getCartByIndex(index: Int) -> Cart? {
+        return index >= getListCount() ? nil : carts[index]
     }
 }
