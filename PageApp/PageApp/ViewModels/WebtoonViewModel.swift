@@ -50,7 +50,6 @@ struct WebtoonListViewModel {
     
     private var webtoons: [Webtoon] {
         return list.map {
-        //작품의 정보가 없을 때 빈문자열이 맞을까?
             Webtoon(
                 title: $0["title"] ?? "",
                 author: $0["author"] ?? "",

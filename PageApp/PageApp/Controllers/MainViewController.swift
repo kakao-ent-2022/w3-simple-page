@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNotificationForMovingToBackAndForeGround()
+        setNotificationForUserDefaults()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,17 +23,20 @@ class MainViewController: UIViewController {
         self.tableView.reloadData()
     }
     
-    func setNotificationForMovingToBackAndForeGround() {
+    func setNotificationForUserDefaults() {
         NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackGround), name: UIApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appMovedToForeGrounde), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     @objc func appMovedToBackGround() {
         print("App moved to Background")
+        purchaseListViewModel.saveToUserDefaults()
     }
     
     @objc func appMovedToForeGrounde() {
         print("App moved to ForeGround")
+        purchaseListViewModel.loadFromUserDefaults()
+        self.tableView.reloadData()
     }
 }
 

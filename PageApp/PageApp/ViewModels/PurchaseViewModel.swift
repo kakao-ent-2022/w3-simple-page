@@ -43,6 +43,7 @@ class PurchaseListViewModel: PurchaseManageable {
     
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(receivePurchase(_:)), name: .didWebtoonPurchase, object: nil)
+        loadFromUserDefaults()
     }
     
     func makePurchase(webtoon: WebtoonViewModel) {
@@ -81,5 +82,25 @@ class PurchaseListViewModel: PurchaseManageable {
             return
         }
         makePurchase(webtoon: webtoonViewModel)
+    }
+    
+    func saveToUserDefaults() {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(self.purchases) {
+            let defaults = UserDefaults.standard
+//            print("\(purchases.count)개의 구매기록이 저장되었습니다.")
+            defaults.set(encoded, forKey: "purchases")
+        }
+    }
+    
+    func loadFromUserDefaults() {
+        let defaults = UserDefaults.standard
+        if let savedPurchases = defaults.object(forKey: "purchases") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedPurchases = try? decoder.decode([Purchase].self, from: savedPurchases) {
+//                print("\(loadedPurchases.count)개의 구매기록이 복원되었습니다.")
+                self.purchases = loadedPurchases
+            }
+        }
     }
 }
