@@ -13,6 +13,15 @@ class ContentBasicCell: UITableViewCell {
     @IBOutlet weak var contentTitle: UILabel!
     @IBOutlet weak var contentAuthor: UILabel!
     
+    private let notificationCenter: NotificationCenter = .default
+    
+    @IBAction func selectPurchaseButtonTounched(_ sender: Any) {
+        if let title = contentTitle.text {
+            let cart = Cart(title: title)
+            notificationCenter.post(name: Notification.Name.onPurchaseContent, object: cart)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

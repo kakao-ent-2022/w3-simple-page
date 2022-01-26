@@ -83,6 +83,9 @@
                                                     <rect key="frame" x="325.5" y="36.5" width="48.5" height="31"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="구매"/>
+                                                    <connections>
+                                                        <action selector="selectPurchaseButtonTounched:" destination="JW4-gf-F23" eventType="touchUpInside" id="oTz-cs-fPL"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkG-I0-J50">
                                                     <rect key="frame" x="118" y="57" width="46" height="18"/>
@@ -129,28 +132,57 @@
                     <navigationItem key="navigationItem" id="zBp-cn-wnX"/>
                     <connections>
                         <outlet property="contentTableView" destination="zn3-aK-XSO" id="Dy3-Yl-vdL"/>
-                        <segue destination="f54-sH-Kas" kind="show" identifier="moveCartVC" id="cdU-Ap-PAr"/>
+                        <segue destination="LTA-7R-VLD" kind="show" identifier="moveCartVC" id="X7c-th-cvb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="97.767857142857139"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Ms7-wP-fHS">
+        <!--Cart View Controller-->
+        <scene sceneID="iOB-bg-nXJ">
             <objects>
-                <viewController id="f54-sH-Kas" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WrS-fJ-c2k">
+                <tableViewController id="LTA-7R-VLD" customClass="CartViewController" customModule="PageApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Be2-Pz-iOY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="rAD-iM-zUN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ZxG-Ul-7kF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YXz-nV-c4w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BasicCartCell" textLabel="OAy-rk-RAr" detailTextLabel="A3N-j5-Xod" style="IBUITableViewCellStyleValue1" id="9a5-Ei-fRj">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9a5-Ei-fRj" id="rh9-cI-gHS">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OAy-rk-RAr">
+                                            <rect key="frame" x="20" y="15" width="25" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A3N-j5-Xod">
+                                            <rect key="frame" x="361" y="15" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LTA-7R-VLD" id="lNi-nR-Pyh"/>
+                            <outlet property="delegate" destination="LTA-7R-VLD" id="BwZ-w4-W4b"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="nXp-wf-VzN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KCl-0B-Ibo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1871" y="98"/>
+            <point key="canvasLocation" x="1839" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qvu-y3-TL3">

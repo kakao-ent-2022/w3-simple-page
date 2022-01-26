@@ -12,6 +12,10 @@ enum ContentConstant {
     static let moveCartVCSegue = "moveCartVC"
 }
 
+extension Notification.Name {
+    static let onPurchaseContent = Notification.Name("purchaseContent")
+}
+
 class ContentViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var contentTableView: UITableView!
@@ -19,11 +23,28 @@ class ContentViewController: UIViewController, UITableViewDelegate {
     private let contentDataSource = ContentDataSource()
     lazy var contents = Content.jsonToContents()
         
+    let notificationCenter: NotificationCenter = .default
+    let operatoinQueue = OperationQueue()
+    var carts: [Cart] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
         initNavigationBar()
         initTableView()
+        initObserve()
+    }
+    
+    private func initObserve() {
+        notificationCenter.addObserver(
+            forName: Notification.Name.onPurchaseContent,
+            object: nil,
+            queue: operatoinQueue
+        ) { (notification) in
+            if let cart = notification.object as? Cart {
+                self.carts.append(cart)
+            }
+        }
     }
     
     private func initNavigationBar() {
@@ -40,7 +61,7 @@ class ContentViewController: UIViewController, UITableViewDelegate {
     }
     
     @objc func moveToCartVC() {
-        performSegue(withIdentifier: ContentConstant.moveCartVCSegue, sender: nil)
+        performSegue(withIdentifier: ContentConstant.moveCartVCSegue, sender: carts)
     }
     
     private func initTableView() {
