@@ -23,14 +23,14 @@ class WebtoonDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath) as! WebtoonCell
-
-        cell.titleLabel.text = list[indexPath.row]["title"]
-        cell.authorLabel.text = list[indexPath.row]["author"]
-        if let imagePath = list[indexPath.row]["image"] {
-            cell.picture.image = UIImage.init(named: imagePath, in: nil, compatibleWith: nil)
         
-        }
+        let item = WebtoonModel(title: list[indexPath.row]["title"]!, author: list[indexPath.row]["author"]!, imagePath: list[indexPath.row]["image"]!)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath) as! WebtoonCell
+        cell.titleLabel.text = item.title
+        cell.authorLabel.text = item.author
+        cell.picture.image = item.image
+        cell.webtoonModel = item
         return cell
     }
 }
