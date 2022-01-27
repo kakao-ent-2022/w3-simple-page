@@ -25,7 +25,7 @@ class WebtoonCell: UITableViewCell {
         webtoonModel = model
         titleLabel.text = model.title
         authorLabel.text = model.author
-        picture.image = model.image
+        picture.image = UIImage(named: model.imagePath)
         selectionStyle = .none
         purchaseButton.isEnabled = !model.isPurchased
     }
