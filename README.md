@@ -30,3 +30,30 @@
 2022년 1월 26일 오전 1시 5분
 
 ---
+
+## 6. 구매기록과 테스트
+### 구현 내용 
+- Content 화면 Navigation Controller 적용 및 Navigation Bar Setting
+- 구매 버튼 클릭 시 NotificationCenter 방식으로 구매 이력 전달
+- 구매 이력 저장 기능 
+- Cart Trade 클래스 분리 및 테스트 코드 작성
+
+<img src="https://user-images.githubusercontent.com/95729473/151274868-77fee267-5a41-4d2c-a8a1-8a8764f844ec.gif" width="300"/>
+
+### 완성 날짜
+2022년 1월 27일 오전 12시 58분
+
+---
+
+## 7. 구매기록 화면
+### 구현 내용 
+- Table Veiw로 구매 내역 리스트 구현
+- 구매 내역 삭제 기능 구현
+- Protocol 사용해서 Cart Trade 클래스 추상화 
+
+<img src="https://user-images.githubusercontent.com/95729473/151274819-234032a1-cb68-40cb-81af-6cda3640c751.gif" width="300"/>
+
+### 완성 날짜
+2022년 1월 27일 오전 1시 52분
+
+---
