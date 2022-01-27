@@ -17,13 +17,8 @@ class WebtoonCell: UITableViewCell {
     @IBOutlet var purchaseButton: UIButton!
     
     @IBAction func purchaseButtonPushed(_ sender: UIButton) {
-        guard let isPurchased = webtoonModel?.isPurchased else {
-            return
-        }
-        if !isPurchased {
-            webtoonModel?.isPurchased = true
-            NotificationCenter.default.post(name: NSNotification.Name("purchase"), object: self)
-        }
+        webtoonModel?.isPurchased = true
+        NotificationCenter.default.post(name: NSNotification.Name("purchase"), object: self)
     }
     
     func configure(from model: WebtoonModel) {
