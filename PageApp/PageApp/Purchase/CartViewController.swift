@@ -10,11 +10,11 @@ import UIKit
 class CartViewController: UITableViewController {
     
     fileprivate var dataSource: HistoryListDataSource?
-    var data: [HistoryModel]?
+    var historiesVM: HistoryListViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource = HistoryListDataSource(histories: data ?? [])
+        dataSource = HistoryListDataSource(historiesVM: historiesVM ?? HistoryListViewModelImpl())
         tableView.dataSource = dataSource
     }
     

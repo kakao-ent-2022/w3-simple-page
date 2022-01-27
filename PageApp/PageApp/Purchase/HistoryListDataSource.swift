@@ -11,8 +11,8 @@ import UIKit
 class HistoryListDataSource: NSObject, UITableViewDataSource {
     var historiesVM: HistoryListViewModel!
     
-    init(histories: [HistoryModel]) {
-        historiesVM = HistoryListViewModelImpl(histories: histories)
+    init(historiesVM: HistoryListViewModel) {
+        self.historiesVM = historiesVM
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
