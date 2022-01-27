@@ -40,8 +40,8 @@ class WebtoonTableViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tableView.reloadData()
         webtoonsVM.updatePurchaseStatus(from: historiesVM)
+        self.tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
