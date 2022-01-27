@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+
+protocol PurchaseHoldable {
+    var content: [Purchase] { get }
+    var count: Int { get }
+    func get(at: Int) -> Purchase?
+    func remove(at: Int)
+}
