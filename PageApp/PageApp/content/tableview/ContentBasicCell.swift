@@ -22,6 +22,12 @@ class ContentBasicCell: UITableViewCell {
         }
     }
     
+    func bind(content: Content) {
+        contentImageView.image = UIImage(named: content.image)
+        contentTitle.text = content.title
+        contentAuthor.text = content.author
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

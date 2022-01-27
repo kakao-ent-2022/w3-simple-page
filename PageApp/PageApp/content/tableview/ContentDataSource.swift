@@ -26,10 +26,7 @@ class ContentDataSource: NSObject, UITableViewDataSource {
         }
         
         let content = contents[indexPath.row]
-        
-        cell.contentImageView.image = UIImage(named: content.image)
-        cell.contentTitle.text = content.title
-        cell.contentAuthor.text = content.author
+        cell.bind(content: content)
         
         return cell
     }
