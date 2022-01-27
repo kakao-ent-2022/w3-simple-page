@@ -18,7 +18,7 @@ class ContentBasicCell: UITableViewCell {
     @IBAction func selectPurchaseButtonTounched(_ sender: Any) {
         if let title = contentTitle.text {
             let cart = Cart(title: title)
-            notificationCenter.post(name: Notification.Name.onPurchaseContent, object: cart)
+            notificationCenter.post(name: .onPurchaseContent, object: nil, userInfo: [ContentConstant.cartUserInfoName: cart])
         }
     }
     

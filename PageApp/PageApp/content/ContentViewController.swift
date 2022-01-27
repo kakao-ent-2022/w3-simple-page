@@ -11,6 +11,7 @@ import UIKit
 enum ContentConstant {
     static let moveCartVCSegue = "moveCartVC"
     static let navigationTitle = "Content Page"
+    static let cartUserInfoName = "cart"
 }
 
 extension Notification.Name {
@@ -38,14 +39,15 @@ class ContentViewController: UIViewController, UITableViewDelegate {
     
     private func initObserve() {
         notificationCenter.addObserver(
-            forName: Notification.Name.onPurchaseContent,
+            forName: .onPurchaseContent,
             object: nil,
             queue: operatoinQueue
         ) { (notification) in
-            if let cart = notification.object as? Cart {
+            if let cart = notification.userInfo?[ContentConstant.cartUserInfoName] as? Cart {
                 self.cartTrade.buy(cart: cart)
             }
         }
+        notificationCenter.post(name: .onPurchaseContent, object: nil)
     }
     
     private func initNavigationBar() {
