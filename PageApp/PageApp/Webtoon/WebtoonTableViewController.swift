@@ -12,6 +12,7 @@ class WebtoonTableViewController: UIViewController {
     
     fileprivate var dataSource: UITableViewDataSource?
     var historiesVM: HistoryListViewModel = HistoryListViewModelImpl()
+    var webtoonsVM: WebtoonListViewModel = WebtoonListViewModelImpl()
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var imageView: UIImageView!
@@ -21,16 +22,26 @@ class WebtoonTableViewController: UIViewController {
         super.viewDidLoad()
         bannerLabel.text = "카카오뱅크와 함께\n26주적금 챌린지"
         bannerLabel.numberOfLines = 2
-        
-        let dataSource = WebtoonDataSource()
+    
+        dataSource = WebtoonDataSource.init(from: webtoonsVM)
         tableView.dataSource = dataSource
-        self.dataSource = dataSource
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name("purchase"), object: nil, queue: nil) {(notification) in
-            if let purchasedItem = notification.object as? WebtoonModel {
-                self.historiesVM.append(HistoryModel(name: purchasedItem.title))
-            }
+            guard let cell = notification.object as? WebtoonCell,
+                  let purchasedItem = cell.webtoonModel,
+                  let indexPath = self.tableView.indexPath(for: cell) else {
+                      return
+                  }
+            
+            self.historiesVM.append(HistoryModel(name: purchasedItem.title))
+            self.tableView.reloadRows(at: [indexPath], with: .none)
+            
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+        webtoonsVM.updatePurchaseStatus(from: historiesVM)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

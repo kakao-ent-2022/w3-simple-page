@@ -7,16 +7,17 @@
 
 import UIKit
 
-struct WebtoonModel: Decodable {
+class WebtoonModel: Decodable {
     var title: String
     var author: String
     var image: UIImage
+    var isPurchased = false
     
     private enum CodingKeys: String, CodingKey {
         case title, author, imagePath = "image"
     }
     
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         title = try container.decode(String.self, forKey: .title)
         author = try container.decode(String.self, forKey: .author)

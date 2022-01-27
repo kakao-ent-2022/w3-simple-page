@@ -10,6 +10,7 @@ import Foundation
 protocol HistoryListViewModel {
     func numberOfRowsInSection(_ section: Int) -> Int
     func get(at index: Int) -> HistoryModel
+    func all() -> [HistoryModel]
     mutating func remove(at index: Int)
     mutating func append(_ history: HistoryModel)
 }
@@ -23,6 +24,10 @@ class HistoryListViewModelImpl: HistoryListViewModel {
     
     func numberOfRowsInSection(_ section: Int) -> Int {
         return histories.count
+    }
+    
+    func all() -> [HistoryModel] {
+        return histories
     }
     
     func get(at index: Int) -> HistoryModel {

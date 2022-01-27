@@ -10,7 +10,8 @@ import Foundation
 protocol WebtoonListViewModel {
     func numberOfRowsInSection(_ section: Int) -> Int
     func get(at index: Int) -> WebtoonModel
-    mutating func remove(at index: Int) -> Void
+    mutating func remove(at index: Int)
+    mutating func updatePurchaseStatus(from historiesVM: HistoryListViewModel)
 }
 
 struct WebtoonListViewModelImpl: WebtoonListViewModel {
@@ -32,6 +33,16 @@ struct WebtoonListViewModelImpl: WebtoonListViewModel {
         webtoons.remove(at: index)
     }
     
+    mutating func updatePurchaseStatus(from historiesVM: HistoryListViewModel) {
+        for webtoon in webtoons {
+            if let _ = historiesVM.all().first(where: { $0.name == webtoon.title }) {
+                webtoon.isPurchased = true
+            } else {
+                webtoon.isPurchased = false
+            }
+        }
+    }
+    
     private static func getData() throws -> [WebtoonModel]? {
         guard let path = Bundle.main.path(forResource: "webtoons", ofType: "json"),
             let jsonString = try? String(contentsOfFile: path) else {
@@ -46,6 +57,5 @@ struct WebtoonListViewModelImpl: WebtoonListViewModel {
         }
         throw CommonError.DataError
     }
-    
     
 }
