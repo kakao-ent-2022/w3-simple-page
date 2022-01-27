@@ -35,26 +35,26 @@ class PageAppTests: XCTestCase {
         }
     }
     
-    func testPurchaseIsAddedToPurchaseHistory() {
+    func test_webtoon구매했을때_PurchaseHisotry에_추가() {
         // given
         let webtoon = Webtoon(title: "testTitle", author: "testAuthor", image: "testImage")
-        let purchase = Purchase(webtoonTitle: webtoon.title, date: Date())
         
         // when
-        purchaseHistory.add(purchase: purchase)
+        purchaseHistory.makePurchase(webtoon: webtoon)
         
         // then
         let result = purchaseHistory.get(at: 0)
-        XCTAssertEqual(purchase, result)
+        XCTAssertEqual(webtoon.title, result?.webtoonTitle)
     }
     
     func testPurchaseHistoryRemovePruchase() {
         // given
         let webtoon = Webtoon(title: "testTitle", author: "testAuthor", image: "testImage")
-        let purchase = Purchase(webtoonTitle: webtoon.title, date: Date())
-        purchaseHistory.add(purchase: purchase)
         
-        // when, then
-        XCTAssertNoThrow(try purchaseHistory.remove(purchase: purchase), "PurchaseHistory.remove() fail")
+        // when
+        purchaseHistory.makePurchase(webtoon: webtoon)
+        
+        // then
+        XCTAssertNoThrow(purchaseHistory.remove(at: 0), "PurchaseHistory.remove() fail")
     }
 }

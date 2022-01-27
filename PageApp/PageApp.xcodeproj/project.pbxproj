@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E3188CE27A266FD00F36D6B /* PurchaseHoldable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3188CD27A266FD00F36D6B /* PurchaseHoldable.swift */; };
 		2E54E7AA279F8A2000DC581F /* Webtoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E54E7A9279F8A2000DC581F /* Webtoon.swift */; };
 		2E54E7AC279F911E00DC581F /* WebtoonJsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E54E7AB279F911E00DC581F /* WebtoonJsonData.swift */; };
 		2E54E7AE279FF1D200DC581F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E54E7AD279FF1D200DC581F /* CartViewController.swift */; };
@@ -14,6 +15,8 @@
 		2E54E7BA27A0015100DC581F /* PageAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E54E7B927A0015100DC581F /* PageAppTests.swift */; };
 		2E54E7C127A00EAC00DC581F /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E54E7C027A00EAC00DC581F /* Purchase.swift */; };
 		2E577ED5279E9F79007A2774 /* WebtoonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E577ED4279E9F79007A2774 /* WebtoonTableViewCell.swift */; };
+		2E57F27127A1215100EA4972 /* CartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57F27027A1215100EA4972 /* CartDataSource.swift */; };
+		2E57F27527A143ED00EA4972 /* PurchaseHolderSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57F27427A143ED00EA4972 /* PurchaseHolderSender.swift */; };
 		2EA5FDD2279E64E90000805B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5FDD1279E64E90000805B /* AppDelegate.swift */; };
 		2EA5FDD4279E64E90000805B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5FDD3279E64E90000805B /* SceneDelegate.swift */; };
 		2EA5FDD6279E64E90000805B /* WebtoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5FDD5279E64E90000805B /* WebtoonViewController.swift */; };
@@ -34,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E3188CD27A266FD00F36D6B /* PurchaseHoldable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHoldable.swift; sourceTree = "<group>"; };
 		2E54E7A9279F8A2000DC581F /* Webtoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webtoon.swift; sourceTree = "<group>"; };
 		2E54E7AB279F911E00DC581F /* WebtoonJsonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonJsonData.swift; sourceTree = "<group>"; };
 		2E54E7AD279FF1D200DC581F /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 		2E54E7B927A0015100DC581F /* PageAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageAppTests.swift; sourceTree = "<group>"; };
 		2E54E7C027A00EAC00DC581F /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		2E577ED4279E9F79007A2774 /* WebtoonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonTableViewCell.swift; sourceTree = "<group>"; };
+		2E57F27027A1215100EA4972 /* CartDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDataSource.swift; sourceTree = "<group>"; };
+		2E57F27427A143ED00EA4972 /* PurchaseHolderSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHolderSender.swift; sourceTree = "<group>"; };
 		2EA5FDCE279E64E90000805B /* PageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EA5FDD1279E64E90000805B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EA5FDD3279E64E90000805B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,8 +80,8 @@
 		2E54E7A7279F89C700DC581F /* view */ = {
 			isa = PBXGroup;
 			children = (
+				2E57F26F27A1213F00EA4972 /* cart */,
 				2E57F26E27A120E300EA4972 /* webtoon */,
-				2E54E7AD279FF1D200DC581F /* CartViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -87,6 +93,7 @@
 				2E54E7AF279FFF9000DC581F /* PurchaseHistory.swift */,
 				2E54E7C027A00EAC00DC581F /* Purchase.swift */,
 				2E54E7AB279F911E00DC581F /* WebtoonJsonData.swift */,
+				2E3188CD27A266FD00F36D6B /* PurchaseHoldable.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -107,6 +114,16 @@
 				2EA5FDE5279E66700000805B /* WebtoonDataSource.swift */,
 			);
 			path = webtoon;
+			sourceTree = "<group>";
+		};
+		2E57F26F27A1213F00EA4972 /* cart */ = {
+			isa = PBXGroup;
+			children = (
+				2E54E7AD279FF1D200DC581F /* CartViewController.swift */,
+				2E57F27027A1215100EA4972 /* CartDataSource.swift */,
+				2E57F27427A143ED00EA4972 /* PurchaseHolderSender.swift */,
+			);
+			path = cart;
 			sourceTree = "<group>";
 		};
 		2EA5FDC5279E64E90000805B = {
@@ -251,13 +268,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E57F27127A1215100EA4972 /* CartDataSource.swift in Sources */,
 				2E54E7AA279F8A2000DC581F /* Webtoon.swift in Sources */,
+				2E57F27527A143ED00EA4972 /* PurchaseHolderSender.swift in Sources */,
 				2EA5FDD6279E64E90000805B /* WebtoonViewController.swift in Sources */,
 				2E54E7B0279FFF9000DC581F /* PurchaseHistory.swift in Sources */,
 				2EA5FDD2279E64E90000805B /* AppDelegate.swift in Sources */,
 				2EA5FDD4279E64E90000805B /* SceneDelegate.swift in Sources */,
 				2E54E7AE279FF1D200DC581F /* CartViewController.swift in Sources */,
 				2E54E7C127A00EAC00DC581F /* Purchase.swift in Sources */,
+				2E3188CE27A266FD00F36D6B /* PurchaseHoldable.swift in Sources */,
 				2E54E7AC279F911E00DC581F /* WebtoonJsonData.swift in Sources */,
 				2E577ED5279E9F79007A2774 /* WebtoonTableViewCell.swift in Sources */,
 				2EA5FDE6279E66700000805B /* WebtoonDataSource.swift in Sources */,

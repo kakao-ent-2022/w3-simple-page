@@ -28,8 +28,11 @@ class WebtoonDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        as! WebtoonTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        as? WebtoonTableViewCell
+        else {
+            return UITableViewCell()
+        }
         
         let webtoon = webtoons[indexPath.row]
         cell.bindWebtoon(webtoon: webtoon)

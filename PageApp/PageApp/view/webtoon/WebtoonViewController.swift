@@ -7,17 +7,15 @@
 
 import UIKit
 
-class WebtoonViewController: UIViewController {
+class WebtoonViewController: UIViewController, SendPurchaseHoldableDelegate {
+
     let novelTableView = UITableView()
-    private var observer: NSKeyValueObservation?
+    @IBOutlet weak var bannerImageView: UIImageView!
+    
     private let purchaseHistory = PurchaseHistory()
     let notificatiCenter = NotificationCenter()
-    
     var novelDataSource: WebtoonDataSource!
-    
     let purchaseNotification = NSNotification.Name("purchaseNotification")
-    
-    @IBOutlet weak var bannerImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +50,7 @@ class WebtoonViewController: UIViewController {
     
     func initWebtoonDataSource() {
         let webtoons = WebtoonJsonData.convertAsWebtoon()
+        
         novelDataSource = WebtoonDataSource(
             source: webtoons,
             purchaseButtonAction: { webtoon in
@@ -73,12 +72,13 @@ class WebtoonViewController: UIViewController {
     }
     
     @objc func onCartButtonTouched() {
-        guard let cartViewController = storyboard?.instantiateViewController(withIdentifier: CartViewController.identifier)
+        
+        guard let cartViewController = storyboard?.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController
         else {
             return
         }
-        
-        navigationController?.pushViewController(cartViewController, animated: true)
+        cartViewController.delegate = self
+        navigationController?.pushViewController(cartViewController, animated: true )
     }
     
     func initNovelTableView() {
@@ -93,5 +93,9 @@ class WebtoonViewController: UIViewController {
         novelTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         novelTableView.topAnchor.constraint(equalTo: bannerImageView.bottomAnchor).isActive =  true
         novelTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+    }
+    
+    func send() -> PurchaseHoldable {
+        return purchaseHistory
     }
 }
