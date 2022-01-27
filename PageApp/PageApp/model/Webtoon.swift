@@ -11,6 +11,7 @@ class Webtoon: NSObject {
     var title: String
     var author: String
     var image: String
+    var isOnSale: Bool
     
     convenience init(title: String, author: String, image: String) {
         self.init(title: title, author: author, image: image, isOnSale: true)
@@ -20,6 +21,7 @@ class Webtoon: NSObject {
         self.title = title
         self.author = author
         self.image = image
+        self.isOnSale = isOnSale
     }
     
     static func == (lhs: Webtoon, rhs: Webtoon) -> Bool {

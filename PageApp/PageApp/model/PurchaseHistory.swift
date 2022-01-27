@@ -11,11 +11,22 @@ enum PurchaseHistoryError: Error {
     case nonExist
 }
 
-class PurchaseHistory {
-    private var purchases: [Purchase]
+protocol PurchaseHoldable {
+    var content: [Purchase] { get }
+    var count: Int { get }
+    func get(at: Int) -> Purchase?
+    func remove(at: Int)
+}
+
+class PurchaseHistory: PurchaseHoldable {
+    var content: [Purchase]
+    
+    var count: Int {
+        return content.count
+    }
     
     init() {
-        purchases = []
+        content = []
     }
     
     func makePurchase(webtoon: Webtoon) {
@@ -24,20 +35,14 @@ class PurchaseHistory {
     }
     
     private func add(purchase: Purchase) {
-        self.purchases.append(purchase)
+        content.append(purchase)
     }
     
-    func remove(purchase: Purchase) throws {
-        for (index, _purchase) in purchases.enumerated() {
-            if _purchase == purchase {
-                purchases.remove(at: index)
-                return
-            }
-        }
-        throw PurchaseHistoryError.nonExist
+    func remove(at: Int) {
+        content.remove(at: at)
     }
     
     func get(at: Int) -> Purchase? {
-        return purchases[at]
+        return content[at]
     }
 }
