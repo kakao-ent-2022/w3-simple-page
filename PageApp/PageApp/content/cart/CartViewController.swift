@@ -7,12 +7,10 @@
 
 import UIKit
 
-enum CartConstant {
-    static let basicCartCell = "BasicCartCell"
-    static let navigationTitle = "Purchase History"
-}
-
 class CartViewController: UITableViewController {
+    
+    let basicCartCell = "BasicCartCell"
+    let navigationTitle = "Purchase History"
     
     var cartTrade: Tradable?
     
@@ -23,7 +21,7 @@ class CartViewController: UITableViewController {
     }
 
     private func initNavigationBar() {
-        navigationItem.title = CartConstant.navigationTitle
+        navigationItem.title = navigationTitle
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,7 +29,7 @@ class CartViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CartConstant.basicCartCell) else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: basicCartCell) else {
             fatalError("no cell")
         }
         

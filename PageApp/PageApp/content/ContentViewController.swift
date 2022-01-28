@@ -8,9 +8,7 @@
 import UIKit
 
 
-enum ContentConstant {
-    static let moveCartVCSegue = "moveCartVC"
-    static let navigationTitle = "Content Page"
+struct ContentConstant {
     static let cartUserInfoName = "cart"
 }
 
@@ -20,6 +18,9 @@ extension Notification.Name {
 
 class ContentViewController: UIViewController, UITableViewDelegate {
     
+    let navigationTitle = "Content Page"
+    let moveCartVCSegue = "moveCartVC"
+
     @IBOutlet weak var contentTableView: UITableView!
     
     private let contentDataSource = ContentDataSource()
@@ -51,7 +52,7 @@ class ContentViewController: UIViewController, UITableViewDelegate {
     }
     
     private func initNavigationBar() {
-        navigationItem.title = ContentConstant.navigationTitle
+        navigationItem.title = navigationTitle
         
         let cartButton: UIButton = {
             let button = UIButton()
@@ -64,7 +65,7 @@ class ContentViewController: UIViewController, UITableViewDelegate {
     }
     
     @objc func moveToCartVC() {
-        performSegue(withIdentifier: ContentConstant.moveCartVCSegue, sender: nil)
+        performSegue(withIdentifier: moveCartVCSegue, sender: nil)
     }
     
     private func initTableView() {
@@ -74,7 +75,7 @@ class ContentViewController: UIViewController, UITableViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == ContentConstant.moveCartVCSegue {
+        if segue.identifier == moveCartVCSegue {
             if let destination = segue.destination as? CartViewController {
                 destination.cartTrade = self.cartTrade
             }

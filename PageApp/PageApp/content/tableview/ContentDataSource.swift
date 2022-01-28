@@ -7,12 +7,10 @@
 
 import UIKit
 
-enum CellConstant {
-    static let basicContentCell = "BasicContentCell"
-}
-
 class ContentDataSource: NSObject, UITableViewDataSource {
 
+    let basicContentCell = "BasicContentCell"
+    
     var contents: [Content] = []
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -21,7 +19,7 @@ class ContentDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellConstant.basicContentCell) as? ContentBasicCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: basicContentCell) as? ContentBasicCell else {
             fatalError("no cell")
         }
         
