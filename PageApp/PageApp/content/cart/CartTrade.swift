@@ -36,7 +36,7 @@ class CartTrade: Tradable {
     }
     
     func getCartByIndex(index: Int) -> Cart? {
-        return index >= getListCount() ? nil : carts[index]
+        return carts.indices.contains(index) ? carts[index] : nil
     }
     
     func delete(index: Int) {
