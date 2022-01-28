@@ -52,7 +52,7 @@ class PurchaseListViewModel: PurchaseManageable {
     }
     
     func retrievePurchase(at index: Int) -> PurchaseViewModel? {
-        return index <= purchaseCount ? PurchaseViewModel(purchases[index]) : nil
+        return purchases.indices.contains(index) ? PurchaseViewModel(purchases[index]) : nil
     }
     
     func remove(at index: Int) {
