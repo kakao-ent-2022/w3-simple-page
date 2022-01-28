@@ -23,4 +23,9 @@ struct HistoryModel {
         self.name = name
         _createdAt = Date.init()
     }
+    
+    init(name: String, createdAt: Date) {
+        self.name = name
+        _createdAt = createdAt
+    }
 }

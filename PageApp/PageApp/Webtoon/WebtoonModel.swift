@@ -6,7 +6,7 @@
 //
 
 
-class WebtoonModel: Decodable {
+class WebtoonModel: Codable {
     var title: String
     var author: String
     var imagePath: String
