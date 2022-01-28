@@ -8,6 +8,7 @@
 import Foundation
 
 protocol HistoryListViewModel {
+    var histories: [HistoryModel] { get }
     func numberOfRowsInSection(_ section: Int) -> Int
     func get(at index: Int) -> HistoryModel
     func all() -> [HistoryModel]

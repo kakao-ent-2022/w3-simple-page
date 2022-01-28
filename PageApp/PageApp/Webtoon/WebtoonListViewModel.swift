@@ -8,6 +8,7 @@
 import Foundation
 
 protocol WebtoonListViewModel {
+    var webtoons: [WebtoonModel] { get }
     func numberOfRowsInSection(_ section: Int) -> Int
     func get(at index: Int) -> WebtoonModel
     mutating func remove(at index: Int)
