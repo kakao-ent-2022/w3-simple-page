@@ -51,7 +51,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         let webtoonViewModel = self.webtoonListViewModel.webtoonAtIndex(indexPath.row)
-        cell.configure(webtoonViewModel: webtoonViewModel, purchaseListViewModel: purchaseListViewModel)
+        let isPurchased = purchaseListViewModel.isPurchased(webtoon: webtoonViewModel)
+        cell.configure(webtoonViewModel: webtoonViewModel, isPurchased: isPurchased)
         return cell
     }
     

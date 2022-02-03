@@ -24,17 +24,17 @@ class WebtoonTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func configure(webtoonViewModel: WebtoonViewModel, purchaseListViewModel: PurchaseListViewModel) {
+    func configure(webtoonViewModel: WebtoonViewModel, isPurchased: Bool) {
         self.webtoonViewModel = webtoonViewModel
         titleLabel.text = webtoonViewModel.title
         authorLabel.text = webtoonViewModel.author
         thumbnail.image = webtoonViewModel.image
-        self.purchaseButton.isEnabled = !purchaseListViewModel.isPurchased(webtoon: webtoonViewModel)
+        self.purchaseButton.isEnabled = !isPurchased
     }
 
     @IBAction func purchaseButtonTouched(_ sender: Any) {
         let userInfo = ["webtoon": self.webtoonViewModel]
-        NotificationCenter.default.post(name: .didWebtoonPurchase, object: self, userInfo: userInfo)
+        NotificationCenter.default.post(name: .didWebtoonPurchase, object: self, userInfo: userInfo as [AnyHashable : Any])
         self.purchaseButton.isEnabled = false
     }
 }
