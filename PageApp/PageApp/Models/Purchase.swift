@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Purchase {
+struct Purchase: Codable {
     let webtoon: Webtoon
     let purchaseTime: Date
     

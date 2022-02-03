@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Webtoon {
+struct Webtoon: Codable {
     let title: String
     let author: String
     let imageFileName: String
