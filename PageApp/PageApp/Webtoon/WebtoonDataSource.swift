@@ -8,7 +8,7 @@
 import UIKit
 
 class WebtoonDataSource: NSObject, UITableViewDataSource {
-    var webtoonVM: WebtoonListViewModel
+    let webtoonVM: WebtoonListViewModel
     
     init(from webtoonVM: WebtoonListViewModel = WebtoonListViewModelImpl()) {
         self.webtoonVM = webtoonVM

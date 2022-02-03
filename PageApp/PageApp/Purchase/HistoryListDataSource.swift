@@ -9,7 +9,7 @@ import UIKit
 
 
 class HistoryListDataSource: NSObject, UITableViewDataSource {
-    var historiesVM: HistoryListViewModel!
+    let historiesVM: HistoryListViewModel!
     
     init(historiesVM: HistoryListViewModel) {
         self.historiesVM = historiesVM

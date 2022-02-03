@@ -12,8 +12,8 @@ protocol HistoryListViewModel {
     func numberOfRowsInSection(_ section: Int) -> Int
     func get(at index: Int) -> HistoryModel
     func all() -> [HistoryModel]
-    mutating func remove(at index: Int)
-    mutating func append(_ history: HistoryModel)
+    func remove(at index: Int)
+    func append(_ history: HistoryModel)
 }
 
 

@@ -11,11 +11,11 @@ protocol WebtoonListViewModel {
     var webtoons: [WebtoonModel] { get }
     func numberOfRowsInSection(_ section: Int) -> Int
     func get(at index: Int) -> WebtoonModel
-    mutating func remove(at index: Int)
-    mutating func updatePurchaseStatus(from historiesVM: HistoryListViewModel)
+    func remove(at index: Int)
+    func updatePurchaseStatus(from historiesVM: HistoryListViewModel)
 }
 
-struct WebtoonListViewModelImpl: WebtoonListViewModel {
+class WebtoonListViewModelImpl: WebtoonListViewModel {
     var webtoons: [WebtoonModel]
     
     init() {
@@ -30,11 +30,11 @@ struct WebtoonListViewModelImpl: WebtoonListViewModel {
         return webtoons[index]
     }
     
-    mutating func remove(at index: Int) {
+    func remove(at index: Int) {
         webtoons.remove(at: index)
     }
     
-    mutating func updatePurchaseStatus(from historiesVM: HistoryListViewModel) {
+    func updatePurchaseStatus(from historiesVM: HistoryListViewModel) {
         for webtoon in webtoons {
             if let _ = historiesVM.all().first(where: { $0.name == webtoon.title }) {
                 webtoon.isPurchased = true
